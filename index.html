@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scott Aubrey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Varela+Round&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /*
+        Colour Palette
+            Red: #F94144
+            Orange: #F3722C
+            Lighter Orange: #F8961E
+            Yellow: #F9C74F
+            green: #90BE6D
+            Green/Blue: #43AA8B
+            steel blue: #577590
+        */
+        :root {
+            --mark-back-color: #577590;
+        }
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: auto;
+        }
+        
+        body, body * {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        body h1, body h2, body h3, body h4, body h4, body h6, body h7 {
+            font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        small {
+            display: inline !important;
+        }
+
+        #sidebar {
+            position: fixed;
+            height: 100%;
+            width: 300px;
+            overflow: scroll;
+            background-color: #FFFFFF;
+            background-image: 
+                radial-gradient(at top left, #F94144, transparent),
+                radial-gradient(at bottom left, #43AA8B , transparent),
+                radial-gradient(at bottom right, #F9C74F, transparent);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+
+        #sidebar * {
+            text-align: right;
+            width: 100%;
+            color: #ffffff;
+        }
+        #sidebar p:first-of-type {
+            font-size: 2rem;
+        }
+        #sidebar ul {
+            list-style-type: none;
+            padding-right: 20px;
+            width: 100%;
+            text-align: right;
+        }
+        .sidebar-tag {
+            font-family: monospace;
+        }
+        #sidebar img.sidebar-avatar {
+            display: block;
+            border-radius: 100%;
+            width: 150px !important;
+            height: 150px !important;
+            margin: 10% auto;
+        }
+
+        #sidebar mark {
+            white-space: nowrap
+        }
+        #sidebar > h2 {
+            margin-bottom: 0;
+        }
+
+        
+
+
+        #main-content {
+            overflow-y: scroll;
+            padding-left: 400px;
+            padding-right: 3rem;
+        }
+
+        #main-content h2 {
+            padding-top: 2rem;
+            border-bottom: 1px solid #90BE6D;
+        }
+        #main-content > h4 {
+            margin-top: 3rem;
+        } 
+
+        #main-content > details {
+            margin-top: 3rem;
+        }
+
+
+        @media screen and (max-width: 767px) {
+            #sidebar {
+                position:initial;
+                width: initial;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            #main-content {
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+        <div id="sidebar">
+            <div>
+                <img class="sidebar-avatar" src="https://en.gravatar.com/avatar/d21fb2219bb2734c8b42f28a16ba1f4a">
+            </div>
+            <p>
+                Hi, I'm Scott!
+            </p>
+            <ul>
+                <li><a href="mailto:scott@aubrey.org.uk">scott@aubrey.org.uk</a><span class="sidebar-tag"> - @</span></li>
+                <li><a href="https://www.aubrey.org.uk">aubrey.org.uk</a><span class="sidebar-tag"> - w</span></li>
+                <li><a href="twitter.com/scottaubrey">twitter.com/scottaubrey</a><span class="sidebar-tag"> - t</span></li>
+                <li><a href="https://github.com/scottaubrey">github.com/scottaubrey</a><span class="sidebar-tag"> - g</span></li>
+            </ul>
+            <p><small>
+                A dedicated technical leader, I'm proficient in a number of technologies, both individually and as a 
+                member of a techincal team. I'm well-versed in PHP and object oriented design, particularly in domain-driven 
+                design, and I enjoy solving particularly difficult technical problems well and in a maintainable way. 
+                I'm a life-long learner, not afraid to get stuck into a technology I'm unfamiliar with, and have a wide 
+                understanding of many technologies to help design and kickstart new projects.
+            </small></p>
+            <h2>Key Skills</h2>
+            <p>
+                <mark>PHP</mark>
+                <mark>Domain-driven development</mark>
+                <mark>PHPUnit</mark>
+                <mark>Zend/Laminas Framework</mark>
+                <mark>Slim Framework</mark>
+                <mark>composer</mark>
+                <mark>Git</mark>
+                <mark>Mercurial</mark>
+                <mark>Swoole</mark>
+                <mark>MySQL</mark>
+                <mark>MongoDB</mark>
+                <mark>CSS</mark>
+                <mark>Bootstrap</mark>
+                <mark>Javascript</mark>
+                <mark>jQuery</mark>
+                <mark>VueJS</mark>
+                <mark>HTML</mark>
+                <mark>NGINX</mark>
+                <mark>Apache</mark>
+                <mark>Ubuntu Linux</mark>
+                <mark>Ubuntu Linux Server</mark>
+                <mark>LXC/LXD containers</mark>
+                <mark>Ansible</mark>
+                <mark>LDAP / Kerberos</mark>
+                <mark>macOS</mark>
+            </p>
+        </div>
+        <div id="main-content">
+            <h2>Experience</h2>
+
+                <h4><mark>Sep 2018 &dash; present</mark> Head of Technology - <small>Christians Against Poverty</small></h4>
+                <p>
+                    Since September 2018 I have run the Technology department at Christians Against Poverty; managing 
+                    the &pound;1.3m budget, line managing 3 team leaders and a program manager, and representing the 
+                    Technology department at a senior management level. I have created and executed a change from 
+                    project to product management, restructuring the System Development team around long-lived product 
+                    teams, and fostering a greater collaboration between Development teams and senior stakeholders. I 
+                    have also driven a greater emphasis on partnership, transparency and joint understanding of long 
+                    term risks and opportunities in the internally developed systems, resulting in joint-sponsorship of 
+                    Technology team investment by the charity's directors for other areas, winning multiple, multi-year 
+                    Development team investments.
+                </p>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <h5>Responsibilities</h5>
+                        <ul>
+                            <li>Managing a growing team (18-24) and budget (&pound;1.2m - &pound;1.4m).</li>
+                            <li>Ensuring the department is meeting regulatory requirements and new opportunities.</li>
+                            <li>Maintaining department wellbeing during a difficult period for the organisation (both before and during the pandemic)</li>
+                            <li>Positioning the Technology team to be sustainable by 2023.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <h5>Key skills</h5>
+                        <ul>
+                            <li>Excellent communication at all levels, from senior stakeholders and organisation-wide announcements, to team level and one-to-one coaching.</li>
+                            <li>Ability to inspire others towards change, setting clear vision and executing that vision for the benefit of the organisation.</li>
+                            <li>Developing and challenging a team of other to improve and grow, while keeping an emphasis on team achievements.</li>
+                            <li>Being a vulnerable and empathetic leader that encourages others to be open and honest, and work together to achieve goals.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <h5>Achievements</h5>
+                        <ol>
+                            <li>Secured &pound;100k investment for an internal trainee developer program.</li>
+                            <li>Successfully restructured internal development team away from projects towards product teams and flow-based work management.</li>
+                            <li>Grew and organisational understanding of risks and technical debt work, and advocated for a balanced approach to development.</li>
+                            <li>Focused on increasing transparency in prioritisation and workload within the department.</li>
+                            <li>All the above factors culminating in a voluntary transfer of budget from the biggest department to the technology department to aid charity objectives.</li>
+                            <li>Started and led a senior leadership group for support services that meets 6 weekly to share understanding and best practice.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h4><mark>Dec 2016 &dash; Aug 2018</mark> Head of Systems Architecture - <small>Christians Against Poverty</small></h4>
+                <p>
+                    Recognised as having greater influence outside of just systems development, I was offered a role as
+                    Head of Systems Architecture, both providing guiding leadership for technical direction across all
+                    the department and greater understanding of technical issues at a senior leadership level. 
+                </p>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <h5>Responsibilities</h5>
+                        <ul>
+                            <li>Creating and communicating a technical vision for our internal and external systems across the department's multi-disciplinary teams.</li>
+                            <li>Driving up the quality of systems through training, change projects and internal advocacy.</li>
+                            <li>Providing the highest-level of technical input for projects across the organisation.</li>
+                            <li>Providing technical insight and understanding at the Senior leadership level.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <h5>Key skills</h5>
+                        <ul>
+                            <li>Communication of deep technical issues in easy to understand terms to stakeholders and technical
+                                staff.</li>
+                            <li>Able to create a compelling technical vision and inspire others towards achieving it.</li>
+                            <li>Able to work in the detail, and at the big picture level to connect multiple projects and create cross-
+                                system solutions to problems.</li>
+                            <li>Contribute technical expertise to department planning and development.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <h5>Achievements</h5>
+                        <ol>
+                            <li>Supported a growing development team that consistently sought increasing systems quality.</li>
+                            <li>Arranged and led training sessions across Systems Development and IT Operations teams.</li>
+                            <li>Provided technical insight into organisation-wide projects that helped to steer their successful
+                                implementation, including the biggest technical investment in the charity's history (Salesforce CRM).</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h4><mark>Dec 2014 &dash; Dec 2016</mark> Systems Development Technical Lead - <small>Christians Against Poverty</small></h4>
+                <p>
+                    As the Systems Development team began to grow, I was asked to provide leadership to the systems 
+                    developers to grow quality of programming, and direction and leadership on how to better grow, 
+                    maintain and integrate our internal and external systems.
+                </p>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <h5>Responsibilities</h5>
+                        <ul>
+                            <li>Supporting, training and onboarding new developers into the team</li>
+                            <li>Providing designs for new developments and technical escalation point for issues and bugs</li>
+                            <li>Supporting the IT Operations team in hosting and supporting our systems in production.</li>
+                            <li>Provide technical insight and understanding at the senior leadership level.</li>
+                            <li>Creating and communicating technical ways of working to the developers.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <h5>Key skills</h5>
+                        <ul>
+                            <li>Being an excellent programmer, able to achieve results in a timely manner and to a high quality.</li>
+                            <li>Able to work with managers to understand gaps in needed skills and provide technical input,
+                                guidance and training.</li>
+                            <li>Provide technical input across a number of projects, and act as an escalation point for technical
+                                issues.</li>
+                            <li>PDeep technical knowledge of PHP, MySQL and the 3rd party libraries in use, as well as tools such as
+                                BitBucket and Mercurial.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <h5>Achievements</h5>
+                        <ol>
+                            <li>Supported necessary changes in ways of working as the team grew from 3 developers to 6.</li>
+                            <li>Provided appropriate training for the development team, inspiring confidence in their abilities, and a
+                                desire to grow technically.</li>
+                            <li>Raised concerns about an externally developed system, and played a key part in an external
+                                technical review of that system.</li>
+                        </ol>
+                    </div>
+                </div>
+                <details>
+                    <summary>More experience</summary>
+
+                    <h4><mark>Sep 2008 &dash; Dec 2014</mark> Systems Developer - <small>Christians Against Poverty</small></h4>
+                    <p>
+                        While still working as a helpdesk support, I was asked to work on the internal PHP-based systems 
+                        after a development role was vacant for multiple months. After proving able to continue an 
+                        existing project and create new systems while still achieving in my Helpdesk role, I was offered 
+                        the role permanently. I was required to learn new skills, tools and ways of working to quickly 
+                        create and maintain the growing number of developed systems using PHP, MySQL and MongoDB, and 
+                        more than met the challenge, consistently achieving the praise of other developers for my 
+                        abilities.
+                    </p>
+
+                    <h4><mark>Sep 2007 &dash;Aug 2008</mark> 2nd line Helpdesk support - <small>Christians Against Poverty</small></h4>
+                    <p>
+                        In late summer 2007, I started work in the I.T. department at Christians Against Poverty; a 
+                        Bradford-based rapidly expanding christian charity with a national centre network. I was given 
+                        the role of second line helpdesk support, providing in-person and on the phone support to the 
+                        head office staff, and the centre staff around the country. Responsibilities included desktop 
+                        support, network infrastructure and training, but I was soon involved with decisions about the 
+                        charity server and network infrastructure. Here I further enhanced my unix administration 
+                        skills, as well as helping the charity roll out it's Mac OS X-based server infrastructure for 
+                        roaming.
+                    </p>
+
+                    <h4><mark>Dec 2005 &dash; Aug 2007</mark> Support Engineer - <small>Hi Tec Bradford</small></h4>
+                    <p>
+                        In 2005, I started work at Hi Tec Bradford, an Apple Authorised Service Provider and Solutions 
+                        Expert for Education. I was offered a role as an Apple Macintosh engineer and sales assistant 
+                        for the shop front. This required me to train on the Macintosh platform, and gave me invaluable 
+                        knowledge because I was able to use my skills on the P.C. platform and apply them to the 
+                        Macintosh, and due to the unix underpinnings of Mac OS X, I was able to develop my personal 
+                        knowledge of unix systems administration. This knowledge allowed me to have a greater complexity 
+                        to designing systems than other engineers that had dealt solely with Apple products. Due to my 
+                        experience in network systems, my role soon evolved to include Macintosh network systems 
+                        creation and on-site orientated tasks alongside my service responsibilities. I designed and 
+                        setup many Macintosh-based networks, including Mac only environments, integrating 50 new Macs 
+                        into an existing windows server environment for a school, and a school migration from Macintosh 
+                        Manager and AppleShare IP OS9 environment to 10.4 server with 10.3 and classic, and Intel 10.4 
+                        based clients. During my time with Hi-Tec, I studied and passed two Apple training exams and was 
+                        able to achieve the Apple Certified Helpdesk Technician and Apple Certified Technical 
+                        Coordinator certifications.
+                    </p>
+
+                    <h4><mark>2002 &dash; Dec 2005</mark> Workshop Engineer - <small>Hi Tec Bradford</small></h4>
+                    <p>
+                        Following my work experience, I was offered a part-time job as a basic engineer. This involved 
+                        building new computer systems, basic assessments and repairs and virus and ad-ware removal and 
+                        repair.
+                    </p>
+                    <p>
+                        After leaving school, I was offered a full-time role within the company as a workshop engineer, 
+                        with day release to college. As time progressed my duties within the company evolved to include 
+                        being an on- site engineer, a database designer and a website programmer. This entailed more 
+                        technical tasks such as network design, installation, repair and maintenance, network server 
+                        design, maintenance and troubleshooting, on-site assistance, new P.C. installations and advice 
+                        on new P.C's, dynamic website and Intranet/Internet management systems creation, as well as 
+                        generic roles including stock management, customer relations, technical support and shop sales. 
+                    </p>
+                </details>
+            <h2>Education</h2> 
+                <details>
+                    <summary><mark>2003</mark> GCSEs - <small>Salt Grammar school</small></summary>
+                    <p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Grade</th>
+                                    <th>Subjects</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>A*</td>
+                                <td>Maths</td>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>Chemistry</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>Biology, English (literature), German, History, Physics, Religious Education</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td>English (language)</td>
+                            </tr>
+                        </table>
+                        I also achieved a pass grade for a GNVQ in Information and Communication Technology, equivalent to four G.C.S.E.'s
+                    </p>
+                </details>
+
+                <details>
+                    <summary><mark>2003 - 2004</mark> HNC Software Engineering (incomplete) - <small>Bradford College, Bradford</small></summary>
+                    <p>
+                        After upper school, I applied to join a HNC course in software engineering at Bradford College. I 
+                        gained a place at 16 years old, 1 year younger than the minimum age they would normally allow. I 
+                        attained 3 distinction grades for all 3 units during the first year. Unfortunately, due to personal 
+                        circumstances I decided to delay the second year, and I was unable to re-attend a year later because 
+                        the course syllabus had changed. 
+                    </p>
+                </details>
+
+            <h2>Hobbies and other interests</h2>
+                <p>
+                    Aside from my interest in all things technical, I also play guitar and drums. I have been involved 
+                    with bands in the past, and enjoy being a member of the worship leading team at my church. I also 
+                    play as part of the ensemble worship team, and have played both guitar and drums regularly for 
+                    Church services and events.
+                </p>
+                <p>
+                    My children are home educated, primarily by my wife, and we all enjoy learning together as a family. 
+                    I help teach my son about computers and programming, and support him through his G.C.S.E. in 
+                    computer science. I also enjoyed pitching in with all their subjects and interests, and especially 
+                    trying to grow an appreciation of the history around us.
+                </p>
+                <p>
+                    I've also more recently grown an interest in video editing and post-production, particularly as the 
+                    need grew to create online services and videos for our church during the COVID-19 pandemic. I 
+                    particularly enjoy the combination of technical abilities, combined with the creative need to create 
+                    a visually compelling package.
+                </p>
+                <p>
+                    I passed my driving test in April 2005, and have enjoyed the freedom of easy traveling since that 
+                    time.
+                </p>
+        </div>
+</body>
+</html>
