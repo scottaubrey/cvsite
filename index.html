@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Security-Policy" content="Content-Security-Policy: default-src 'self' fonts.gstatic.com">
     <title>Scott Aubrey</title>
     <link rel="stylesheet" href="external-resources/mini.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Varela+Round&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -34,7 +34,7 @@
             right: 0;
             overflow: auto;
         }
-        
+
         body, body * {
             font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
         }
@@ -52,12 +52,12 @@
             width: 300px;
             overflow: scroll;
             background-color: #FFFFFF;
-            background-image: 
+            background-image:
                 radial-gradient(at top left, #F94144, transparent),
                 radial-gradient(at bottom left, #43AA8B , transparent),
                 radial-gradient(at bottom right, #F9C74F, transparent);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+            background-size: 400% 100%;
+            animation: gradient 5s  infinite;
             color: #FFFFFF;
             display: flex;
             flex-direction: column;
@@ -65,6 +65,17 @@
             align-items: center;
             padding-right: 2rem;
             padding-left: 2rem;
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
         }
 
         #sidebar * {
@@ -99,7 +110,7 @@
             margin-bottom: 0;
         }
 
-        
+
 
 
         #main-content {
@@ -114,7 +125,7 @@
         }
         #main-content > h4 {
             margin-top: 3rem;
-        } 
+        }
 
         #main-content > details {
             margin-top: 3rem;
@@ -149,10 +160,10 @@
                 <li><a href="https://github.com/scottaubrey">github.com/scottaubrey</a><span class="sidebar-tag"> - g</span></li>
             </ul>
             <p><small>
-                A dedicated technical leader, I'm proficient in a number of technologies, both individually and as a 
-                member of a techincal team. I'm well-versed in PHP and object oriented design, particularly in domain-driven 
-                design, and I enjoy solving particularly difficult technical problems well and in a maintainable way. 
-                I'm a life-long learner, not afraid to get stuck into a technology I'm unfamiliar with, and have a wide 
+                A dedicated technical leader, I'm proficient in a number of technologies, both individually and as a
+                member of a techincal team. I'm well-versed in PHP and object oriented design, particularly in domain-driven
+                design, and I enjoy solving particularly difficult technical problems well and in a maintainable way.
+                I'm a life-long learner, not afraid to get stuck into a technology I'm unfamiliar with, and have a wide
                 understanding of many technologies to help design and kickstart new projects.
             </small></p>
             <h2>Key Skills</h2>
@@ -189,14 +200,14 @@
 
                 <h4><mark>Sep 2018 &dash; present</mark> Head of Technology - <small>Christians Against Poverty</small></h4>
                 <p>
-                    Since September 2018 I have run the Technology department at Christians Against Poverty; managing 
-                    the &pound;1.3m budget, line managing 3 team leaders and a program manager, and representing the 
-                    Technology department at a senior management level. I have created and executed a change from 
-                    project to product management, restructuring the System Development team around long-lived product 
-                    teams, and fostering a greater collaboration between Development teams and senior stakeholders. I 
-                    have also driven a greater emphasis on partnership, transparency and joint understanding of long 
-                    term risks and opportunities in the internally developed systems, resulting in joint-sponsorship of 
-                    Technology team investment by the charity's directors for other areas, winning multiple, multi-year 
+                    Since September 2018 I have run the Technology department at Christians Against Poverty; managing
+                    the &pound;1.3m budget, line managing 3 team leaders and a program manager, and representing the
+                    Technology department at a senior management level. I have created and executed a change from
+                    project to product management, restructuring the System Development team around long-lived product
+                    teams, and fostering a greater collaboration between Development teams and senior stakeholders. I
+                    have also driven a greater emphasis on partnership, transparency and joint understanding of long
+                    term risks and opportunities in the internally developed systems, resulting in joint-sponsorship of
+                    Technology team investment by the charity's directors for other areas, winning multiple, multi-year
                     Development team investments.
                 </p>
                 <div class="row">
@@ -235,7 +246,7 @@
                 <p>
                     Recognised as having greater influence outside of just systems development, I was offered a role as
                     Head of Systems Architecture, both providing guiding leadership for technical direction across all
-                    the department and greater understanding of technical issues at a senior leadership level. 
+                    the department and greater understanding of technical issues at a senior leadership level.
                 </p>
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-4">
@@ -271,8 +282,8 @@
 
                 <h4><mark>Dec 2014 &dash; Dec 2016</mark> Systems Development Technical Lead - <small>Christians Against Poverty</small></h4>
                 <p>
-                    As the Systems Development team began to grow, I was asked to provide leadership to the systems 
-                    developers to grow quality of programming, and direction and leadership on how to better grow, 
+                    As the Systems Development team began to grow, I was asked to provide leadership to the systems
+                    developers to grow quality of programming, and direction and leadership on how to better grow,
                     maintain and integrate our internal and external systems.
                 </p>
                 <div class="row">
@@ -314,63 +325,63 @@
 
                     <h4><mark>Sep 2008 &dash; Dec 2014</mark> Systems Developer - <small>Christians Against Poverty</small></h4>
                     <p>
-                        While still working as a helpdesk support, I was asked to work on the internal PHP-based systems 
-                        after a development role was vacant for multiple months. After proving able to continue an 
-                        existing project and create new systems while still achieving in my Helpdesk role, I was offered 
-                        the role permanently. I was required to learn new skills, tools and ways of working to quickly 
-                        create and maintain the growing number of developed systems using PHP, MySQL and MongoDB, and 
-                        more than met the challenge, consistently achieving the praise of other developers for my 
+                        While still working as a helpdesk support, I was asked to work on the internal PHP-based systems
+                        after a development role was vacant for multiple months. After proving able to continue an
+                        existing project and create new systems while still achieving in my Helpdesk role, I was offered
+                        the role permanently. I was required to learn new skills, tools and ways of working to quickly
+                        create and maintain the growing number of developed systems using PHP, MySQL and MongoDB, and
+                        more than met the challenge, consistently achieving the praise of other developers for my
                         abilities.
                     </p>
 
                     <h4><mark>Sep 2007 &dash;Aug 2008</mark> 2nd line Helpdesk support - <small>Christians Against Poverty</small></h4>
                     <p>
-                        In late summer 2007, I started work in the I.T. department at Christians Against Poverty; a 
-                        Bradford-based rapidly expanding christian charity with a national centre network. I was given 
-                        the role of second line helpdesk support, providing in-person and on the phone support to the 
-                        head office staff, and the centre staff around the country. Responsibilities included desktop 
-                        support, network infrastructure and training, but I was soon involved with decisions about the 
-                        charity server and network infrastructure. Here I further enhanced my unix administration 
-                        skills, as well as helping the charity roll out it's Mac OS X-based server infrastructure for 
+                        In late summer 2007, I started work in the I.T. department at Christians Against Poverty; a
+                        Bradford-based rapidly expanding christian charity with a national centre network. I was given
+                        the role of second line helpdesk support, providing in-person and on the phone support to the
+                        head office staff, and the centre staff around the country. Responsibilities included desktop
+                        support, network infrastructure and training, but I was soon involved with decisions about the
+                        charity server and network infrastructure. Here I further enhanced my unix administration
+                        skills, as well as helping the charity roll out it's Mac OS X-based server infrastructure for
                         roaming.
                     </p>
 
                     <h4><mark>Dec 2005 &dash; Aug 2007</mark> Support Engineer - <small>Hi Tec Bradford</small></h4>
                     <p>
-                        In 2005, I started work at Hi Tec Bradford, an Apple Authorised Service Provider and Solutions 
-                        Expert for Education. I was offered a role as an Apple Macintosh engineer and sales assistant 
-                        for the shop front. This required me to train on the Macintosh platform, and gave me invaluable 
-                        knowledge because I was able to use my skills on the P.C. platform and apply them to the 
-                        Macintosh, and due to the unix underpinnings of Mac OS X, I was able to develop my personal 
-                        knowledge of unix systems administration. This knowledge allowed me to have a greater complexity 
-                        to designing systems than other engineers that had dealt solely with Apple products. Due to my 
-                        experience in network systems, my role soon evolved to include Macintosh network systems 
-                        creation and on-site orientated tasks alongside my service responsibilities. I designed and 
-                        setup many Macintosh-based networks, including Mac only environments, integrating 50 new Macs 
-                        into an existing windows server environment for a school, and a school migration from Macintosh 
-                        Manager and AppleShare IP OS9 environment to 10.4 server with 10.3 and classic, and Intel 10.4 
-                        based clients. During my time with Hi-Tec, I studied and passed two Apple training exams and was 
-                        able to achieve the Apple Certified Helpdesk Technician and Apple Certified Technical 
+                        In 2005, I started work at Hi Tec Bradford, an Apple Authorised Service Provider and Solutions
+                        Expert for Education. I was offered a role as an Apple Macintosh engineer and sales assistant
+                        for the shop front. This required me to train on the Macintosh platform, and gave me invaluable
+                        knowledge because I was able to use my skills on the P.C. platform and apply them to the
+                        Macintosh, and due to the unix underpinnings of Mac OS X, I was able to develop my personal
+                        knowledge of unix systems administration. This knowledge allowed me to have a greater complexity
+                        to designing systems than other engineers that had dealt solely with Apple products. Due to my
+                        experience in network systems, my role soon evolved to include Macintosh network systems
+                        creation and on-site orientated tasks alongside my service responsibilities. I designed and
+                        setup many Macintosh-based networks, including Mac only environments, integrating 50 new Macs
+                        into an existing windows server environment for a school, and a school migration from Macintosh
+                        Manager and AppleShare IP OS9 environment to 10.4 server with 10.3 and classic, and Intel 10.4
+                        based clients. During my time with Hi-Tec, I studied and passed two Apple training exams and was
+                        able to achieve the Apple Certified Helpdesk Technician and Apple Certified Technical
                         Coordinator certifications.
                     </p>
 
                     <h4><mark>2002 &dash; Dec 2005</mark> Workshop Engineer - <small>Hi Tec Bradford</small></h4>
                     <p>
-                        Following my work experience, I was offered a part-time job as a basic engineer. This involved 
-                        building new computer systems, basic assessments and repairs and virus and ad-ware removal and 
+                        Following my work experience, I was offered a part-time job as a basic engineer. This involved
+                        building new computer systems, basic assessments and repairs and virus and ad-ware removal and
                         repair.
                     </p>
                     <p>
-                        After leaving school, I was offered a full-time role within the company as a workshop engineer, 
-                        with day release to college. As time progressed my duties within the company evolved to include 
-                        being an on- site engineer, a database designer and a website programmer. This entailed more 
-                        technical tasks such as network design, installation, repair and maintenance, network server 
-                        design, maintenance and troubleshooting, on-site assistance, new P.C. installations and advice 
-                        on new P.C's, dynamic website and Intranet/Internet management systems creation, as well as 
-                        generic roles including stock management, customer relations, technical support and shop sales. 
+                        After leaving school, I was offered a full-time role within the company as a workshop engineer,
+                        with day release to college. As time progressed my duties within the company evolved to include
+                        being an on- site engineer, a database designer and a website programmer. This entailed more
+                        technical tasks such as network design, installation, repair and maintenance, network server
+                        design, maintenance and troubleshooting, on-site assistance, new P.C. installations and advice
+                        on new P.C's, dynamic website and Intranet/Internet management systems creation, as well as
+                        generic roles including stock management, customer relations, technical support and shop sales.
                     </p>
                 </details>
-            <h2>Education</h2> 
+            <h2>Education</h2>
                 <details>
                     <summary><mark>2003</mark> GCSEs - <small>Salt Grammar school</small></summary>
                         <table>
@@ -405,35 +416,35 @@
                 <details>
                     <summary><mark>2003 - 2004</mark> HNC Software Engineering (incomplete) - <small>Bradford College, Bradford</small></summary>
                     <p>
-                        After upper school, I applied to join a HNC course in software engineering at Bradford College. I 
-                        gained a place at 16 years old, 1 year younger than the minimum age they would normally allow. I 
-                        attained 3 distinction grades for all 3 units during the first year. Unfortunately, due to personal 
-                        circumstances I decided to delay the second year, and I was unable to re-attend a year later because 
-                        the course syllabus had changed. 
+                        After upper school, I applied to join a HNC course in software engineering at Bradford College. I
+                        gained a place at 16 years old, 1 year younger than the minimum age they would normally allow. I
+                        attained 3 distinction grades for all 3 units during the first year. Unfortunately, due to personal
+                        circumstances I decided to delay the second year, and I was unable to re-attend a year later because
+                        the course syllabus had changed.
                     </p>
                 </details>
 
             <h2>Hobbies and other interests</h2>
                 <p>
-                    Aside from my interest in all things technical, I also play guitar and drums. I have been involved 
-                    with bands in the past, and enjoy being a member of the worship leading team at my church. I also 
-                    play as part of the ensemble worship team, and have played both guitar and drums regularly for 
+                    Aside from my interest in all things technical, I also play guitar and drums. I have been involved
+                    with bands in the past, and enjoy being a member of the worship leading team at my church. I also
+                    play as part of the ensemble worship team, and have played both guitar and drums regularly for
                     Church services and events.
                 </p>
                 <p>
-                    My children are home educated, primarily by my wife, and we all enjoy learning together as a family. 
-                    I help teach my son about computers and programming, and support him through his G.C.S.E. in 
-                    computer science. I also enjoyed pitching in with all their subjects and interests, and especially 
+                    My children are home educated, primarily by my wife, and we all enjoy learning together as a family.
+                    I help teach my son about computers and programming, and support him through his G.C.S.E. in
+                    computer science. I also enjoyed pitching in with all their subjects and interests, and especially
                     trying to grow an appreciation of the history around us.
                 </p>
                 <p>
-                    I've also more recently grown an interest in video editing and post-production, particularly as the 
-                    need grew to create online services and videos for our church during the COVID-19 pandemic. I 
-                    particularly enjoy the combination of technical abilities, combined with the creative need to create 
+                    I've also more recently grown an interest in video editing and post-production, particularly as the
+                    need grew to create online services and videos for our church during the COVID-19 pandemic. I
+                    particularly enjoy the combination of technical abilities, combined with the creative need to create
                     a visually compelling package.
                 </p>
                 <p>
-                    I passed my driving test in April 2005, and have enjoyed the freedom of easy traveling since that 
+                    I passed my driving test in April 2005, and have enjoyed the freedom of easy traveling since that
                     time.
                 </p>
         </div>
