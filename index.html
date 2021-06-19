@@ -143,6 +143,90 @@
                 padding-left: 1rem;
             }
         }
+
+        meter {
+            width: 100%;
+            height: 10px;
+            -webkit-appearance: none; /* Reset appearance */
+            -moz-appearence: meterbar; /* Reset appearance */
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        meter::-webkit-meter-bar {
+            background: none; /* Required to get rid of the default background property */
+            background-color: whiteSmoke;
+            box-shadow: 0 5px 5px -5px #333 inset;
+        }
+
+        meter::-webkit-meter-optimum-value {
+            box-shadow: 0 5px 5px -5px #999 inset;
+            background-image: linear-gradient(
+                90deg,
+                #43AA8B 0%,
+                #90BE6D 100%
+            );
+            background-size: 100% 100%;
+        }
+
+        meter::-moz-meter-bar {
+            box-shadow: 0 5px 5px -5px #999 inset;
+            background-image: linear-gradient(
+                90deg,
+                #43AA8B 0%,
+                #90BE6D 100%
+            );
+            background-size: 100% 100%;
+        }
+
+        label.meter-label {
+            font-size: 0.8em;
+        }
+
+        div.meter {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-shadow: 0 5px 5px -5px #333 inset;
+            width: 100%;
+            height: 10px;
+            display: block;
+            background-color: whiteSmoke;
+            box-shadow: 0 5px 5px -5px #333 inset;
+        }
+
+        span.meter-value {
+            height: inherit;
+            box-shadow: 0 5px 5px -5px #999 inset;
+            background-color: whiteSmoke;
+            background-image: linear-gradient(
+                90deg,
+                #43AA8B 0%,
+                #90BE6D 100%
+            );
+            background-size: 100% 100%;
+            display: block;
+            text-indent: 9999px;
+        }
+
+        span.meter-value.meter-value-4 {
+            width: 80% !important;
+            background-size: 125% 100%;
+        }
+
+        span.meter-value.meter-value-3 {
+            width: 60% !important;
+            background-size: 167% 100%;
+        }
+
+        span.meter-value.meter-value-2 {
+            width: 40% !important;
+            background-size: 250% 100%;
+        }
+        span.meter-value.meter-value-1 {
+            width: 20% !important;
+            background-size: 400% 100%;
+        }
+
+
     </style>
 </head>
 <body>
@@ -168,31 +252,132 @@
             </small></p>
             <h2>Key Skills</h2>
             <p>
-                <mark>PHP</mark>
-                <mark>Domain-driven development</mark>
-                <mark>PHPUnit</mark>
-                <mark>Zend/Laminas Framework</mark>
-                <mark>Slim Framework</mark>
-                <mark>Composer</mark>
-                <mark>Git</mark>
-                <mark>Mercurial</mark>
-                <mark>Swoole</mark>
-                <mark>MySQL</mark>
-                <mark>MongoDB</mark>
-                <mark>CSS</mark>
-                <mark>Bootstrap</mark>
-                <mark>Javascript</mark>
-                <mark>jQuery</mark>
-                <mark>VueJS</mark>
-                <mark>HTML</mark>
-                <mark>NGINX</mark>
-                <mark>Apache</mark>
-                <mark>Ubuntu Linux</mark>
-                <mark>Ubuntu Linux Server</mark>
-                <mark>LXC/LXD containers</mark>
-                <mark>Ansible</mark>
-                <mark>LDAP / Kerberos</mark>
-                <mark>macOS</mark>
+                <label class="meter-label">
+                    PHP
+                    <div class="meter"><span class="meter-value meter-value-5">5/5</span></div>
+                </label>
+
+                <label class="meter-label">
+                    HTML
+                    <div class="meter"><span class="meter-value meter-value-3">3/5</span></div>
+                </label>
+
+                <label class="meter-label">
+                    CSS
+                    <div class="meter"><span class="meter-value meter-value-3">3/5</span></div>
+                </label>
+
+                <label class="meter-label">
+                    Domain-driven design
+                    <div class="meter"><span class="meter-value meter-value-3">3/5</span></div>
+                </label>
+
+                <label class="meter-label">
+                    Ubuntu Linux
+                    <div class="meter"><span class="meter-value meter-value-4">4/5</span></div>
+                </label>
+            </p>
+            <p>
+                <label class="meter-label">
+                    PHP
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Domain-driven development
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    PHPUnit
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Zend/Laminas Framework
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Slim Framework
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Composer
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Git
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Mercurial
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Swoole
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    MySQL
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    MongoDB
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    CSS
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Bootstrap
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Javascript
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    jQuery
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    VueJS
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    HTML
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    NGINX
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Apache
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Ubuntu Linux
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Ubuntu Linux Server
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    LXC/LXD containers
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    Ansible
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    LDAP / Kerberos
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
+                <label class="meter-label">
+                    macOS
+                    <div class="meter"><span class="meter-value meter-value-">/5</span></div>
+                </label>
             </p>
         </div>
         <div id="main-content">
