@@ -165,22 +165,28 @@
             align-items: center;
             text-align: center;
             padding: 1rem 1rem;
-            animation: 1s ease-in-out 0s 1 skill-left;
+            animation: 1s ease-in-out 0s 1 fade-in-left;
         }
         .skill-text {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 1rem 3rem;
-            animation: 1s ease-in-out 0s 1 skill-right;
+            animation: 1s ease-in-out 0s 1 fade-in-right;
+        }
+        #contact {
+            text-align: center;
+        }
+        #contact ul {
+            list-style: none;
         }
 
         @media screen and (min-width: 1280px) {
             .skill-logo.col-lg-last {
-                animation: 1s ease-in-out 0s 1 skill-right;
+                animation: 1s ease-in-out 0s 1 fade-in-right;
             }
             .skill-text.col-lg-first {
-                animation: 1s ease-in-out 0s 1 skill-left;
+                animation: 1s ease-in-out 0s 1 fade-in-left;
             }
         }
         .skill-text.col-lg-last h3 {
@@ -190,7 +196,7 @@
             text-align: right;
         }
 
-        @keyframes skill-left {
+        @keyframes fade-in-left {
             0% {
                 transform: translateX(-100px);
                 opacity: 0;
@@ -201,7 +207,7 @@
             }
         }
 
-        @keyframes skill-right {
+        @keyframes fade-in-right {
             0% {
                 transform: translateX(100px);
                 opacity: 0;
@@ -211,6 +217,38 @@
                 opacity: 1;
             }
         }
+
+        @keyframes fade-in-down {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        .experience-section {
+            padding: 2rem 1rem;
+            animation: 1s ease-in-out 0s 1 fade-in-down;
+        }
+
+        .education-section {
+            padding: 2rem 1rem;
+            animation: 1s ease-in-out 0s 1 fade-in-down;
+        }
+
+        .hobby-section {
+            padding: 2rem 1rem;
+            animation: 1s ease-in-out 0s 1 fade-in-down;
+        }
+
+        .contact-section {
+            animation: 1s ease-in-out 0s 1 fade-in-down;
+        }
+
+
     </style>
 </head>
 <body>
@@ -347,22 +385,23 @@
                 </div>
             </div>
     </section>
-    <section id="experience">
+    <section id="experience" >
         <h2>Experience</h2>
-
-        <h4><mark>Sep 2018 &dash; present</mark> Head of Technology - <small>Christians Against Poverty</small></h4>
-        <p>
-            Since September 2018 I have run the Technology department at Christians Against Poverty; managing
-            the &pound;1.3m budget, line managing 3 team leaders and a program staff, and representing the
-            Technology department at a senior management level. I have created and executed a change from
-            project to product management, restructuring the System Development team around long-lived product
-            teams, and fostering a greater collaboration between development teams and senior stakeholders. I
-            have also driven a greater emphasis on partnership, transparency and joint understanding of long
-            term risks and opportunities in the internally developed systems, resulting in joint-sponsorship of
-            Technology team investment by the charity's directors for other areas, winning multiple, multi-year
-            development team investments.
-        </p>
-        <div class="row">
+        <div class="experience-section" data-appear-on-scroll="experience-section">
+            <h4><mark>Sep 2018 &dash; present</mark> Head of Technology - <small>Christians Against Poverty</small></h4>
+            <p>
+                Since September 2018 I have run the Technology department at Christians Against Poverty; managing
+                the &pound;1.3m budget, line managing 3 team leaders and a program staff, and representing the
+                Technology department at a senior management level. I have created and executed a change from
+                project to product management, restructuring the System Development team around long-lived product
+                teams, and fostering a greater collaboration between development teams and senior stakeholders. I
+                have also driven a greater emphasis on partnership, transparency and joint understanding of long
+                term risks and opportunities in the internally developed systems, resulting in joint-sponsorship of
+                Technology team investment by the charity's directors for other areas, winning multiple, multi-year
+                development team investments.
+            </p>
+        </div>
+        <div class="row experience-section" data-appear-on-scroll="experience-section">
             <div class="col-sm-12 col-md-12 col-lg-4">
                 <h5>Responsibilities</h5>
                 <ul>
@@ -393,14 +432,16 @@
                 </ol>
             </div>
         </div>
-        <hr>
-        <h4><mark>Dec 2016 &dash; Aug 2018</mark> Head of Systems Architecture - <small>Christians Against Poverty</small></h4>
-        <p>
-            Recognised as having greater influence outside of just systems development, I was offered a role as
-            Head of Systems Architecture, both providing guiding leadership for technical direction across all
-            the department and greater understanding of technical issues at a senior leadership level.
-        </p>
-        <div class="row">
+        <div class="experience-section" data-appear-on-scroll="experience-section"><hr></div>
+        <div class="experience-section" data-appear-on-scroll="experience-section">
+            <h4><mark>Dec 2016 &dash; Aug 2018</mark> Head of Systems Architecture - <small>Christians Against Poverty</small></h4>
+            <p>
+                Recognised as having greater influence outside of just systems development, I was offered a role as
+                Head of Systems Architecture, both providing guiding leadership for technical direction across all
+                the department and greater understanding of technical issues at a senior leadership level.
+            </p>
+        </div>
+        <div class="row experience-section"  data-appear-on-scroll="experience-section">
             <div class="col-sm-12 col-md-12 col-lg-4">
                 <h5>Responsibilities</h5>
                 <ul>
@@ -431,14 +472,16 @@
                 </ol>
             </div>
         </div>
-        <hr>
-        <h4><mark>Dec 2014 &dash; Dec 2016</mark> Systems Development Technical Lead - <small>Christians Against Poverty</small></h4>
-        <p>
-            As the Systems Development team began to grow, I was asked to provide leadership to the systems
-            developers to grow quality of programming, and direction and leadership on how to better grow,
-            maintain and integrate our internal and external systems.
-        </p>
-        <div class="row">
+        <div class="experience-section" data-appear-on-scroll="experience-section"><hr></div>
+        <div class="experience-section"  data-appear-on-scroll="experience-section">
+            <h4><mark>Dec 2014 &dash; Dec 2016</mark> Systems Development Technical Lead - <small>Christians Against Poverty</small></h4>
+            <p>
+                As the Systems Development team began to grow, I was asked to provide leadership to the systems
+                developers to grow quality of programming, and direction and leadership on how to better grow,
+                maintain and integrate our internal and external systems.
+            </p>
+        </div>
+        <div class="row experience-section"  data-appear-on-scroll="experience-section">
             <div class="col-sm-12 col-md-12 col-lg-4">
                 <h5>Responsibilities</h5>
                 <ul>
@@ -457,7 +500,7 @@
                         guidance and training.</li>
                     <li>Provide technical input across a number of projects, and act as an escalation point for technical
                         issues.</li>
-                    <li>PDeep technical knowledge of PHP, MySQL and the 3rd party libraries in use, as well as tools such as
+                    <li>Deep technical knowledge of PHP, MySQL and the 3rd party libraries in use, as well as tools such as
                         BitBucket and Mercurial.</li>
                 </ul>
             </div>
@@ -472,7 +515,7 @@
                 </ol>
             </div>
         </div>
-        <hr>
+
         <details>
             <summary>More experience</summary>
 
@@ -537,80 +580,84 @@
     </section>
     <section id="education">
         <h2>Education</h2>
-        <details>
-            <summary><mark>2003 - 2004</mark> HNC Software Engineering (incomplete) - <small>Bradford College, Bradford</small></summary>
-            <p>
-                After upper school, I applied to join a HNC course in software engineering at Bradford College. I
-                gained a place at 16 years old, 1 year younger than the minimum age they would normally allow. I
-                attained 3 distinction grades for all 3 units during the first year. Unfortunately, due to personal
-                circumstances I decided to delay the second year, and I was unable to re-attend a year later because
-                the course syllabus had changed.
-            </p>
-        </details>
-        <hr>
-        <details>
-            <summary><mark>2003</mark> GCSEs - <small>Salt Grammar school</small></summary>
-                <table>
-                    <thead>
+        <div class="education-section" data-appear-on-scroll="education-section">
+            <details>
+                <summary><mark>2003 - 2004</mark> HNC Software Engineering (incomplete) - <small>Bradford College, Bradford</small></summary>
+                <p>
+                    After upper school, I applied to join a HNC course in software engineering at Bradford College. I
+                    gained a place at 16 years old, 1 year younger than the minimum age they would normally allow. I
+                    attained 3 distinction grades for all 3 units during the first year. Unfortunately, due to personal
+                    circumstances I decided to delay the second year, and I was unable to re-attend a year later because
+                    the course syllabus had changed.
+                </p>
+            </details>
+        </div>
+        <div class="education-section" data-appear-on-scroll="education-section">
+            <details>
+                <summary><mark>2003</mark> GCSEs - <small>Salt Grammar school</small></summary>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Grade</th>
+                                <th>Subjects</th>
+                            </tr>
+                        </thead>
                         <tr>
-                            <th>Grade</th>
-                            <th>Subjects</th>
+                            <td>A*</td>
+                            <td>Maths</td>
                         </tr>
-                    </thead>
-                    <tr>
-                        <td>A*</td>
-                        <td>Maths</td>
-                    </tr>
-                    <tr>
-                        <td>A</td>
-                        <td>Chemistry</td>
-                    </tr>
-                    <tr>
-                        <td>B</td>
-                        <td>Biology, English (literature), German, History, Physics, Religious Education</td>
-                    </tr>
-                    <tr>
-                        <td>C</td>
-                        <td>English (language)</td>
-                    </tr>
-                </table>
-            <p>
-                I also achieved a pass grade for a GNVQ in Information and Communication Technology, equivalent to four G.C.S.E.'s
-            </p>
-        </details>
-
+                        <tr>
+                            <td>A</td>
+                            <td>Chemistry</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>Biology, English (literature), German, History, Physics, Religious Education</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>English (language)</td>
+                        </tr>
+                    </table>
+                <p>
+                    I also achieved a pass grade for a GNVQ in Information and Communication Technology, equivalent to four G.C.S.E.'s
+                </p>
+            </details>
+        </div>
     </section>
     <section id="hobbies">
         <h2>Hobbies and other interests</h2>
-        <p>
-            Aside from my interest in all things technical, I also play guitar and drums. I have been involved
-            with bands in the past, and enjoy being a member of the worship leading team at my church. I also
-            play as part of the ensemble worship team, and have played both guitar and drums regularly for
-            Church services and events.
-        </p>
-        <p>
-            My children are home educated, primarily by my wife, and we all enjoy learning together as a family.
-            I help teach my son about computers and programming, and support him through his G.C.S.E. in
-            computer science. I also enjoyed pitching in with all their subjects and interests, and especially
-            trying to grow an appreciation of the history around us.
-        </p>
-        <p>
-            I've also more recently grown an interest in video editing and post-production, particularly as the
-            need grew to create online services and videos for our church during the COVID-19 pandemic. I
-            particularly enjoy the combination of technical abilities, combined with the creative need to create
-            a visually compelling package.
-        </p>
-        <p>
-            I passed my driving test in April 2005, and have enjoyed the freedom of easy traveling since that
-            time.
-        </p>
+        <div class="hobby-section"  data-appear-on-scroll="hobby-section">
+            <p>
+                Aside from my interest in all things technical, I also play guitar and drums. I have been involved
+                with bands in the past, and enjoy being a member of the worship leading team at my church. I also
+                play as part of the ensemble worship team, and have played both guitar and drums regularly for
+                Church services and events.
+            </p>
+            <p>
+                My children are home educated, primarily by my wife, and we all enjoy learning together as a family.
+                I help teach my son about computers and programming, and support him through his G.C.S.E. in
+                computer science. I also enjoyed pitching in with all their subjects and interests, and especially
+                trying to grow an appreciation of the history around us.
+            </p>
+            <p>
+                I've also more recently grown an interest in video editing and post-production, particularly as the
+                need grew to create online services and videos for our church during the COVID-19 pandemic. I
+                particularly enjoy the combination of technical abilities, combined with the creative need to create
+                a visually compelling package.
+            </p>
+            <p>
+                I passed my driving test in April 2005, and have enjoyed the freedom of easy traveling since that
+                time.
+            </p>
+        </div>
     </section>
     <footer id="contact">
-        <ul>
-            <li><a href="mailto:scott@aubrey.org.uk">scott@aubrey.org.uk</a><span class="sidebar-tag"> - @</span></li>
-            <li><a href="https://www.aubrey.org.uk">aubrey.org.uk</a><span class="sidebar-tag"> - w</span></li>
-            <li><a href="twitter.com/scottaubrey">twitter.com/scottaubrey</a><span class="sidebar-tag"> - t</span></li>
-            <li><a href="https://github.com/scottaubrey">github.com/scottaubrey</a><span class="sidebar-tag"> - g</span></li>
+        <ul class="contact-section" data-appear-on-scroll="contact-section">
+            <li>email - <a href="mailto:scott@aubrey.org.uk">scott@aubrey.org.uk</a></li>
+            <li>website - <a href="https://www.aubrey.org.uk">aubrey.org.uk</a></li>
+            <li>twitter - <a href="twitter.com/scottaubrey">twitter.com/scottaubrey</a></li>
+            <li>github - <a href="https://github.com/scottaubrey">github.com/scottaubrey</a></li>
         </ul>
     </footer>
 
