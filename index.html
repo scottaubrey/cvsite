@@ -699,7 +699,7 @@
         }
 
         window.addEventListener('scroll', checkPosition);
-        window.addEventListener('resize', () => {init(); checkPosition();});
+        window.addEventListener('resize', init);
 
         init();
         checkPosition();
