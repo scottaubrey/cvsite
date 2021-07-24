@@ -9,16 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Varela+Round&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        /*
-        Colour Palette
-            Red: #F94144
-            Orange: #F3722C
-            Lighter Orange: #F8961E
-            Yellow: #F9C74F
-            green: #90BE6D
-            Green/Blue: #43AA8B
-            steel blue: #577590
-        */
+        :root {
+            /* override mini.css colour */
+            --mark-back-color: #577590 !important;
+            --cvsite-red: #F94144;
+            --cvsite-orange: #f3722c;
+            --cvsite-lighter-orange: #f8961e;
+            --cvsite-yellow: #f9c74f;
+            --cvsite-green: #90be6d;
+            --cvsite-green-blue: #43aa8b;
+            --cvsite-steel-blue: #577590;
+        }
         html {
             scroll-behavior: smooth;
         }
@@ -41,9 +42,9 @@
             height: 100%;
             background-color: #FFF;
             background-image:
-                radial-gradient(at top left, #F94144, transparent),
-                radial-gradient(at bottom left, #43AA8B , transparent),
-                radial-gradient(at bottom right, #F9C74F, transparent);
+                radial-gradient(at top left, var(--cvsite-red), transparent),
+                radial-gradient(at bottom left, var(--cvsite-green-blue), transparent),
+                radial-gradient(at bottom right, var(--cvsite-yellow), transparent);
             background-size: 400% 100%;
             animation: gradient 15s linear infinite;
             color: #FFF;
@@ -98,31 +99,31 @@
             border: 2px solid #FFF;
         }
         #me {
-            color: #F3722C;
+            color: var(--cvsite-orange);
             font-weight: bold;
-            text-shadow: 0px 0px 5px #F9C74F, 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
+            text-shadow: 0px 0px 5px var(--cvsite-yellow), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
             animation: 15s linear 0s infinite alternate both running me-color-change;
         }
         @keyframes me-color-change {
             0% {
-                color: #F9C74F;
-                text-shadow: 0px 0px 5px #F3722C, 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
+                color: var(--cvsite-yellow);
+                text-shadow: 0px 0px 5px var(--cvsite-orange), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
             }
             35% {
-                color: #F9C74F;
-                text-shadow: 0px 0px 5px #F3722C, 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
+                color: var(--cvsite-yellow);
+                text-shadow: 0px 0px 5px var(--cvsite-orange), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
             }
             50% {
-                color: #F3722C;
-                text-shadow: 0px 0px 5px #F9C74F, 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
+                color: var(--cvsite-orange);
+                text-shadow: 0px 0px 5px var(--cvsite-yellow), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
             }
             65% {
-                color: #F9C74F;
-                text-shadow: 0px 0px 5px #F3722C, 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
+                color: var(--cvsite-yellow);
+                text-shadow: 0px 0px 5px var(--cvsite-orange), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
             }
             100% {
-                color: #F9C74F;
-                text-shadow: 0px 0px 5px #F3722C, 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
+                color: var(--cvsite-yellow);
+                text-shadow: 0px 0px 5px var(--cvsite-orange), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
             }
         }
 
@@ -352,14 +353,14 @@
         <h4><mark>Sep 2018 &dash; present</mark> Head of Technology - <small>Christians Against Poverty</small></h4>
         <p>
             Since September 2018 I have run the Technology department at Christians Against Poverty; managing
-            the &pound;1.3m budget, line managing 3 team leaders and a program manager, and representing the
+            the &pound;1.3m budget, line managing 3 team leaders and a program staff, and representing the
             Technology department at a senior management level. I have created and executed a change from
             project to product management, restructuring the System Development team around long-lived product
-            teams, and fostering a greater collaboration between Development teams and senior stakeholders. I
+            teams, and fostering a greater collaboration between development teams and senior stakeholders. I
             have also driven a greater emphasis on partnership, transparency and joint understanding of long
             term risks and opportunities in the internally developed systems, resulting in joint-sponsorship of
             Technology team investment by the charity's directors for other areas, winning multiple, multi-year
-            Development team investments.
+            development team investments.
         </p>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-4">
