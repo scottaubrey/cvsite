@@ -1,687 +1,1223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="Content-Security-Policy: default-src 'self' fonts.gstatic.com">
-    <title>Scott Aubrey</title>
-    <link rel="stylesheet" href="external-resources/mini.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Varela+Round&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        :root {
-            /* override mini.css colour */
-            --mark-back-color: #577590 !important;
-            --cvsite-red: #F94144;
-            --cvsite-orange: #f3722c;
-            --cvsite-lighter-orange: #f8961e;
-            --cvsite-yellow: #f9c74f;
-            --cvsite-green: #90be6d;
-            --cvsite-green-blue: #43aa8b;
-            --cvsite-steel-blue: #577590;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        body, body * {
-            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
-        }
-        body h1, body h2, body h3, body h4, body h4, body h6, body h7 {
-            font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
-        }
-
-
-
-        #summary {
-            min-height: 100vh;
-            height: 100%;
-            background-color: #FFF;
-            background-image:
-                radial-gradient(at top left, var(--cvsite-red), transparent),
-                radial-gradient(at bottom left, var(--cvsite-green-blue), transparent),
-                radial-gradient(at bottom right, var(--cvsite-yellow), transparent);
-            background-size: 400% 100%;
-            animation: gradient 15s linear infinite;
-            color: #FFF;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 3rem 15rem;
-            white-space: normal;
-        }
-        @keyframes gradient {
-            0% {
-                background-position: 0 50%;
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="Content-Security-Policy: default-src 'self' fonts.gstatic.com"
+        />
+        <title>Scott Aubrey</title>
+        <link rel="stylesheet" href="external-resources/mini.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&family=Varela+Round&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            :root {
+                /* override mini.css colour */
+                --mark-back-color: #577590 !important;
+                --cvsite-red: #f94144;
+                --cvsite-orange: #f3722c;
+                --cvsite-lighter-orange: #f8961e;
+                --cvsite-yellow: #f9c74f;
+                --cvsite-green: #90be6d;
+                --cvsite-green-blue: #43aa8b;
+                --cvsite-steel-blue: #577590;
             }
-            50% {
-                background-position: 100% 50%;
+            html {
+                scroll-behavior: smooth;
             }
-            100% {
-                background-position: 0 50%;
+            body {
+                margin: 0;
+                overflow-x: hidden;
             }
-        }
 
-        header * {
-            text-align: center;
-            width: 100%;
-            color: #FFF;
-        }
-        header > * {
-            margin: 2rem 0;
-        }
-        header p:first-of-type {
-            font-size: 2rem;
-        }
-
-        header img.avatar {
-            display: block;
-            border-radius: 100%;
-            width: 30% !important;
-            min-width: 256px;
-            margin: 2rem auto;
-        }
-        header a.button {
-            background: none;
-            color: #FFF;
-            border: 2px solid #FFF;
-            width: auto;
-            margin: 0.2rem 0.2rem;
-        }
-
-        header a.button:hover {
-            background: #FFFFFF33;
-            border: 2px solid #FFF;
-        }
-        #me {
-            color: var(--cvsite-orange);
-            font-weight: bold;
-            text-shadow: 0px 0px 5px var(--cvsite-yellow), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
-            animation: 15s linear 0s infinite alternate both running me-color-change;
-        }
-        @keyframes me-color-change {
-            0% {
-                color: var(--cvsite-yellow);
-                text-shadow: 0px 0px 5px var(--cvsite-orange), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
+            body,
+            body * {
+                font-family:
+                    "Montserrat",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    Ubuntu,
+                    "Helvetica Neue",
+                    Helvetica,
+                    sans-serif;
             }
-            35% {
-                color: var(--cvsite-yellow);
-                text-shadow: 0px 0px 5px var(--cvsite-orange), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
+            body h1,
+            body h2,
+            body h3,
+            body h4,
+            body h4,
+            body h6,
+            body h7 {
+                font-family:
+                    "Varela Round",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    Ubuntu,
+                    "Helvetica Neue",
+                    Helvetica,
+                    sans-serif;
             }
-            50% {
-                color: var(--cvsite-orange);
-                text-shadow: 0px 0px 5px var(--cvsite-yellow), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
-            }
-            65% {
-                color: var(--cvsite-yellow);
-                text-shadow: 0px 0px 5px var(--cvsite-orange), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
-            }
-            100% {
-                color: var(--cvsite-yellow);
-                text-shadow: 0px 0px 5px var(--cvsite-orange), 0px 0px 10px #FFF, 0px 0px 20px #CCCCCC;
-            }
-        }
 
-
-        body > section {
-            padding: 3rem 10rem;
-        }
-
-        @media screen and (max-width: 1024px) {
             #summary {
-                padding: 3rem;
+                min-height: 100vh;
+                height: 100%;
+                background-color: #fff;
+                background-image:
+                    radial-gradient(
+                        at top left,
+                        var(--cvsite-red),
+                        transparent
+                    ),
+                    radial-gradient(
+                        at bottom left,
+                        var(--cvsite-green-blue),
+                        transparent
+                    ),
+                    radial-gradient(
+                        at bottom right,
+                        var(--cvsite-yellow),
+                        transparent
+                    );
+                background-size: 400% 100%;
+                animation: gradient 15s linear infinite;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 3rem 15rem;
+                white-space: normal;
             }
-        }
-        @media screen and (max-width: 767px) {
+            @keyframes gradient {
+                0% {
+                    background-position: 0 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0 50%;
+                }
+            }
+
+            header * {
+                text-align: center;
+                width: 100%;
+                color: #fff;
+            }
+            header > * {
+                margin: 2rem 0;
+            }
+            header p:first-of-type {
+                font-size: 2rem;
+            }
+
+            header img.avatar {
+                display: block;
+                border-radius: 100%;
+                width: 30% !important;
+                min-width: 256px;
+                margin: 2rem auto;
+            }
+            header a.button {
+                background: none;
+                color: #fff;
+                border: 2px solid #fff;
+                width: auto;
+                margin: 0.2rem 0.2rem;
+            }
+
+            header a.button:hover {
+                background: #ffffff33;
+                border: 2px solid #fff;
+            }
+            #me {
+                color: var(--cvsite-orange);
+                font-weight: bold;
+                text-shadow:
+                    0px 0px 5px var(--cvsite-yellow),
+                    0px 0px 10px #fff,
+                    0px 0px 20px #cccccc;
+                animation: 15s linear 0s infinite alternate both running
+                    me-color-change;
+            }
+            @keyframes me-color-change {
+                0% {
+                    color: var(--cvsite-yellow);
+                    text-shadow:
+                        0px 0px 5px var(--cvsite-orange),
+                        0px 0px 10px #fff,
+                        0px 0px 20px #cccccc;
+                }
+                35% {
+                    color: var(--cvsite-yellow);
+                    text-shadow:
+                        0px 0px 5px var(--cvsite-orange),
+                        0px 0px 10px #fff,
+                        0px 0px 20px #cccccc;
+                }
+                50% {
+                    color: var(--cvsite-orange);
+                    text-shadow:
+                        0px 0px 5px var(--cvsite-yellow),
+                        0px 0px 10px #fff,
+                        0px 0px 20px #cccccc;
+                }
+                65% {
+                    color: var(--cvsite-yellow);
+                    text-shadow:
+                        0px 0px 5px var(--cvsite-orange),
+                        0px 0px 10px #fff,
+                        0px 0px 20px #cccccc;
+                }
+                100% {
+                    color: var(--cvsite-yellow);
+                    text-shadow:
+                        0px 0px 5px var(--cvsite-orange),
+                        0px 0px 10px #fff,
+                        0px 0px 20px #cccccc;
+                }
+            }
+
             body > section {
-                padding: 3rem;
+                padding: 3rem 10rem;
             }
-        }
 
-        body > section {
-            background-color: #f3f3f3;
-        }
-        body > section:nth-child(even) {
-            background-color: #FFF;
-        }
-
-        h1 > small, h2 > small, h3 > small, h4 > small, h5 > small, h6 > small {
-            display: inline;
-        }
-
-        .appear-on-scroll-hidden {
-            opacity: 0;
-        }
-
-
-        .skill-logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 1rem 1rem;
-            animation: 1s ease-in-out 0s 1 fade-in-left;
-        }
-        .skill-text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem 3rem;
-            animation: 1s ease-in-out 0s 1 fade-in-right;
-        }
-        #contact {
-            text-align: center;
-        }
-        #contact ul {
-            list-style: none;
-        }
-
-        @media screen and (min-width: 1280px) {
-            .skill-logo.col-lg-last {
-                animation: 1s ease-in-out 0s 1 fade-in-right;
+            @media screen and (max-width: 1024px) {
+                #summary {
+                    padding: 3rem;
+                }
             }
-            .skill-text.col-lg-first {
+            @media screen and (max-width: 767px) {
+                body > section {
+                    padding: 3rem;
+                }
+            }
+
+            body > section {
+                background-color: #f3f3f3;
+            }
+            body > section:nth-child(even) {
+                background-color: #fff;
+            }
+
+            h1 > small,
+            h2 > small,
+            h3 > small,
+            h4 > small,
+            h5 > small,
+            h6 > small {
+                display: inline;
+            }
+
+            .appear-on-scroll-hidden {
+                opacity: 0;
+            }
+
+            .skill-logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 1rem 1rem;
                 animation: 1s ease-in-out 0s 1 fade-in-left;
             }
-        }
-        .skill-text.col-lg-last h3 {
-            text-align: right;
-        }
-        .skill-text.col-lg-last p {
-            text-align: right;
-        }
-
-        @keyframes fade-in-left {
-            0% {
-                transform: translateX(-100px);
-                opacity: 0;
+            .skill-text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem 3rem;
+                animation: 1s ease-in-out 0s 1 fade-in-right;
             }
-            100% {
-                transform: translateX(0px);
-                opacity: 1;
+            #contact {
+                text-align: center;
             }
-        }
-
-        @keyframes fade-in-right {
-            0% {
-                transform: translateX(100px);
-                opacity: 0;
+            #contact ul {
+                list-style: none;
             }
-            100% {
-                transform: translateX(0px);
-                opacity: 1;
+
+            @media screen and (min-width: 1280px) {
+                .skill-logo.col-lg-last {
+                    animation: 1s ease-in-out 0s 1 fade-in-right;
+                }
+                .skill-text.col-lg-first {
+                    animation: 1s ease-in-out 0s 1 fade-in-left;
+                }
             }
-        }
-
-        @keyframes fade-in-down {
-            0% {
-                transform: translateY(-100px);
-                opacity: 0;
+            .skill-text.col-lg-last h3 {
+                text-align: right;
             }
-            100% {
-                transform: translateY(0px);
-                opacity: 1;
+            .skill-text.col-lg-last p {
+                text-align: right;
             }
-        }
 
-        .experience-section {
-            padding: 2rem 1rem;
-            animation: 1s ease-in-out 0s 1 fade-in-down;
-        }
+            @keyframes fade-in-left {
+                0% {
+                    transform: translateX(-100px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateX(0px);
+                    opacity: 1;
+                }
+            }
 
-        .education-section {
-            padding: 2rem 1rem;
-            animation: 1s ease-in-out 0s 1 fade-in-down;
-        }
+            @keyframes fade-in-right {
+                0% {
+                    transform: translateX(100px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateX(0px);
+                    opacity: 1;
+                }
+            }
 
-        .hobby-section {
-            padding: 2rem 1rem;
-            animation: 1s ease-in-out 0s 1 fade-in-down;
-        }
+            @keyframes fade-in-down {
+                0% {
+                    transform: translateY(-100px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
 
-        .contact-section {
-            animation: 1s ease-in-out 0s 1 fade-in-down;
-        }
+            .experience-section {
+                padding: 2rem 1rem;
+                animation: 1s ease-in-out 0s 1 fade-in-down;
+            }
 
+            .education-section {
+                padding: 2rem 1rem;
+                animation: 1s ease-in-out 0s 1 fade-in-down;
+            }
 
-    </style>
-</head>
-<body>
-    <header id="summary">
-        <div>
-            <img class="avatar" src="images/portrait.jpeg" alt="portrait photo of Scott Aubrey">
-        </div>
-        <p>
-            Hi, I'm <span id="me">Scott Aubrey</span>.
-        </p>
-        <p>
-            A dedicated technical leader, I'm proficient in a number of technologies, both individually and as a
-            member of a technical team. I'm well-versed in PHP and object oriented design, particularly in domain-driven
-            design, and have a background in network and system administration. I enjoy solving particularly difficult
-            technical problems well and in a maintainable way. I'm a life-long learner, not afraid to get stuck into a
-            technology I'm unfamiliar with, and have a wide understanding of many technologies to help design and
-            kickstart new projects.
-        </p>
-        <div>
-            <a class="button" href="#skills">My skills</a>
-            <a class="button" href="#experience">My experience</a>
-            <a class="button" href="#education">My education</a>
-            <a class="button" href="#contact">My contact details</a>
-        </div>
-    </header>
-    <section id="skills">
-        <h2>Key Skills</h2>
+            .hobby-section {
+                padding: 2rem 1rem;
+                animation: 1s ease-in-out 0s 1 fade-in-down;
+            }
+
+            .contact-section {
+                animation: 1s ease-in-out 0s 1 fade-in-down;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="summary">
+            <div>
+                <img
+                    class="avatar"
+                    src="images/portrait.jpeg"
+                    alt="portrait photo of Scott Aubrey"
+                />
+            </div>
+            <p>Hi, I'm <span id="me">Scott Aubrey</span>.</p>
+            <p>
+                A dedicated technical leader, I'm proficient in a number of
+                technologies, both individually and as a member of a technical
+                team. I'm well-versed in PHP and object oriented design,
+                particularly in domain-driven design, and have a background in
+                network and system administration. I enjoy solving particularly
+                difficult technical problems well and in a maintainable way. I'm
+                a life-long learner, not afraid to get stuck into a technology
+                I'm unfamiliar with, and have a wide understanding of many
+                technologies to help design and kickstart new projects.
+            </p>
+            <div>
+                <a class="button" href="#skills">My skills</a>
+                <a class="button" href="#experience">My experience</a>
+                <a class="button" href="#education">My education</a>
+                <a class="button" href="#contact">My contact details</a>
+            </div>
+        </header>
+        <section id="skills">
+            <h2>Key Skills</h2>
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-4" data-appear-on-scroll="skill-logo">
-                    <img src="images/php8.png" alt="PHP 8 logo">
+                <div
+                    class="col-sm-12 col-md-12 col-lg-4"
+                    data-appear-on-scroll="skill-logo"
+                >
+                    <img src="images/php8.png" alt="PHP 8 logo" />
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-8" data-appear-on-scroll="skill-text" style="display: flex; justify-content: center; align-items: center;">
+                <div
+                    class="col-sm-12 col-md-12 col-lg-8"
+                    data-appear-on-scroll="skill-text"
+                    style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    "
+                >
                     <div>
                         <h3>Software developer</h3>
                         <p>
-                            I am an extremely competant PHP programmer, having explored and used nearly every corner of
-                            it's engine behaviour. I've created web applications that form the core part of an
-                            organisations tech capability, I've created APIs that allowed integration between systems,
-                            and I've migrated applications from early spaghetti PHP to modern framework driven
-                            applications utilising composer, and created new application requirements by following a
-                            domain-driven design and test-driven design mentality.
+                            I am an extremely competant PHP programmer, having
+                            explored and used nearly every corner of it's engine
+                            behaviour. I've created web applications that form
+                            the core part of an organisations tech capability,
+                            I've created APIs that allowed integration between
+                            systems, and I've migrated applications from early
+                            spaghetti PHP to modern framework driven
+                            applications utilising composer, and created new
+                            application requirements by following a
+                            domain-driven design and test-driven design
+                            mentality.
                         </p>
                         <p>
-                            I've also created systems tools to automate a teams work or provide administrative
-                            capabilities to teams, compiled and bundled PHP web applications into self-executing
-                            AppImages, and used tools such as Roadrunner and Swoole to use PHP as an application server,
-                            and benefit from increased flexibility and response time from doing so, and used other
-                            languages when PHP wasn't the right tool, for example using Python to do financial
-                            calculations that required monetary precision in a FCA regulated environment.
+                            I've also created systems tools to automate a teams
+                            work or provide administrative capabilities to
+                            teams, compiled and bundled PHP web applications
+                            into self-executing AppImages, and used tools such
+                            as Roadrunner and Swoole to use PHP as an
+                            application server, and benefit from increased
+                            flexibility and response time from doing so, and
+                            used other languages when PHP wasn't the right tool,
+                            for example using Python to do financial
+                            calculations that required monetary precision in a
+                            FCA regulated environment.
                         </p>
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr />
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-4 skill-logo col-lg-last" data-appear-on-scroll="skill-logo">
+                <div
+                    class="col-sm-12 col-md-12 col-lg-4 skill-logo col-lg-last"
+                    data-appear-on-scroll="skill-logo"
+                >
                     <div>
-                        <img src="images/cof_orange_hex.png" alt="PHP 8 logo" width="180">
-                        <img src="images/FREEBSD_Logo_Vert_Pos_RGB.png" alt="FreeBSD logo" width="200">
-                        <img src="images/MacOS_logo_(2017).svg.png" alt="Apple macOS logo" width="200">
+                        <img
+                            src="images/cof_orange_hex.png"
+                            alt="PHP 8 logo"
+                            width="180"
+                        />
+                        <img
+                            src="images/FREEBSD_Logo_Vert_Pos_RGB.png"
+                            alt="FreeBSD logo"
+                            width="200"
+                        />
+                        <img
+                            src="images/MacOS_logo_(2017).svg.png"
+                            alt="Apple macOS logo"
+                            width="200"
+                        />
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-8 skill-text col-lg-first"  data-appear-on-scroll="skill-text" style="display: flex; justify-content: center; align-items: center;">
+                <div
+                    class="col-sm-12 col-md-12 col-lg-8 skill-text col-lg-first"
+                    data-appear-on-scroll="skill-text"
+                    style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    "
+                >
                     <div>
                         <h3>Server administrator</h3>
                         <p>
-                            I have a background in server administration, from early days running Microsoft Windows Server
-                            file and network environments, through Mac Server environments with Windows and Mac clients, and
-                            finally with Unix-life Server administration running desktop and network services, web applications and
+                            I have a background in server administration, from
+                            early days running Microsoft Windows Server file and
+                            network environments, through Mac Server
+                            environments with Windows and Mac clients, and
+                            finally with Unix-life Server administration running
+                            desktop and network services, web applications and
                             databases, and containerisation technologies.
-                        </p><p>
-                            I have setup, configured and maintained Samba servers,
-                            OpenLDAP and kerberos enrivonment, Python, Java and PHP applications, MySQL and Mongo databases,
-                            including automation of the full lifecycle, including initial setup, upgrades, backups annd
-                            monitoring. My favourite operating systems are macOS, Ubuntu and Debian Linux, and FreeBSD.
+                        </p>
+                        <p>
+                            I have setup, configured and maintained Samba
+                            servers, OpenLDAP and kerberos enrivonment, Python,
+                            Java and PHP applications, MySQL and Mongo
+                            databases, including automation of the full
+                            lifecycle, including initial setup, upgrades,
+                            backups annd monitoring. My favourite operating
+                            systems are macOS, Ubuntu and Debian Linux, and
+                            FreeBSD.
                         </p>
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr />
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-4 skill-logo" data-appear-on-scroll="skill-logo">
-                    <img src="images/team.jpg" alt="Extremely cheesy photo of multiple hands meeting in the middle to form a spoke">
+                <div
+                    class="col-sm-12 col-md-12 col-lg-4 skill-logo"
+                    data-appear-on-scroll="skill-logo"
+                >
+                    <img
+                        src="images/team.jpg"
+                        alt="Extremely cheesy photo of multiple hands meeting in the middle to form a spoke"
+                    />
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-8 skill-text" data-appear-on-scroll="skill-text" style="display: flex; justify-content: center; align-items: center;">
+                <div
+                    class="col-sm-12 col-md-12 col-lg-8 skill-text"
+                    data-appear-on-scroll="skill-text"
+                    style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    "
+                >
                     <div>
                         <h3>Technical leader</h3>
                         <p>
-                            I have led teams of programmers. I have led teams of server engineers, I've led the entire
-                            Technology department. Whether it is leading a team through a deeply technological
-                            challenge such as legacy code migration, or difficult change that requires great
-                            communication, planning and execution, I've had experience in doing it. The challenges of
-                            helping teams to adopt a new way of working has defined my most recent roles and I've aimed
-                            to do so with respect and appreciation for each member of the team.
-                        </p><p>
-                            My aim is always to serve the organisation and the team of people, in whatever capacity is
-                            required of me.
+                            I have led teams of programmers. I have led teams of
+                            server engineers, I've led the entire Technology
+                            department. Whether it is leading a team through a
+                            deeply technological challenge such as legacy code
+                            migration, or difficult change that requires great
+                            communication, planning and execution, I've had
+                            experience in doing it. The challenges of helping
+                            teams to adopt a new way of working has defined my
+                            most recent roles and I've aimed to do so with
+                            respect and appreciation for each member of the
+                            team.
+                        </p>
+                        <p>
+                            My aim is always to serve the organisation and the
+                            team of people, in whatever capacity is required of
+                            me.
                         </p>
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr />
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-4 skill-logo col-lg-last" data-appear-on-scroll="skill-logo">
-                    <img src="images/book.jpg" alt="One side an open book in a meadow. Daisy flowers are in the foreground in front of the book leaves.">
+                <div
+                    class="col-sm-12 col-md-12 col-lg-4 skill-logo col-lg-last"
+                    data-appear-on-scroll="skill-logo"
+                >
+                    <img
+                        src="images/book.jpg"
+                        alt="One side an open book in a meadow. Daisy flowers are in the foreground in front of the book leaves."
+                    />
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-8 skill-text col-lg-first"  data-appear-on-scroll="skill-text" style="">
+                <div
+                    class="col-sm-12 col-md-12 col-lg-8 skill-text col-lg-first"
+                    data-appear-on-scroll="skill-text"
+                    style=""
+                >
                     <div>
                         <h3>Life-long learner</h3>
                         <p>
-                            I have always desired to learn, and almost everything I know and believe comes from a
-                            life-long desire to learn. I also care deeply about the education of others, whether it is
-                            my children whom I home-educate with my wife, or through  setting an expectation of
-                            corporate learning within the teams I have led.
-                        </p><p>
-                            I read a lot on programming, system architecture, leadership (particularly technical
-                            leadership, and widely on all all topics. I read from internet sources following blogs,
-                            news sites and community feeds, as well as sources such as Wikipedia. I enjoy reading books,
-                            including fiction and non-fiction.
-                        </p><p>
-                            Books I have read and have impacted me include:
+                            I have always desired to learn, and almost
+                            everything I know and believe comes from a life-long
+                            desire to learn. I also care deeply about the
+                            education of others, whether it is my children whom
+                            I home-educate with my wife, or through setting an
+                            expectation of corporate learning within the teams I
+                            have led.
                         </p>
+                        <p>
+                            I read a lot on programming, system architecture,
+                            leadership (particularly technical leadership, and
+                            widely on all all topics. I read from internet
+                            sources following blogs, news sites and community
+                            feeds, as well as sources such as Wikipedia. I enjoy
+                            reading books, including fiction and non-fiction.
+                        </p>
+                        <p>Books I have read and have impacted me include:</p>
                         <ul>
                             <li>Sooner Safer Happier by Jonathan Smart</li>
                             <li>War and Peace and IT by Mark Schwartz</li>
                             <li>A Seat at the Table by Mark Schwartz</li>
-                            <li>The Phoenix Project and the Unicorn Project by Gene Kim, Kevin Behr and George Spafford</li>
+                            <li>
+                                The Phoenix Project and the Unicorn Project by
+                                Gene Kim, Kevin Behr and George Spafford
+                            </li>
                             <li>The Goal by Eli Goldratt</li>
-                            <li>Measuring and Managing Performance in Organisations by Robert D Austin, Tom Demarco and Timothy Lister</li>
-                            <li>The Mythical Man-month by Frederick P. Brooks Jr</li>
-                            <li>The 4 Disciplines of Execution by Chris McChesney, Jim Huling, and Sean Covey</li>
+                            <li>
+                                Measuring and Managing Performance in
+                                Organisations by Robert D Austin, Tom Demarco
+                                and Timothy Lister
+                            </li>
+                            <li>
+                                The Mythical Man-month by Frederick P. Brooks Jr
+                            </li>
+                            <li>
+                                The 4 Disciplines of Execution by Chris
+                                McChesney, Jim Huling, and Sean Covey
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-    </section>
-    <section id="experience" >
-        <h2>Experience</h2>
-        <div class="experience-section" data-appear-on-scroll="experience-section">
-            <h4><mark>May 2022 &dash; present</mark> Tech Lead Manager - <small>eLife Sciences Publications Ltd</small></h4>
-            <p>
-                Since May 2022, I took responsibility for leading the display technologies team at eLife. This coincided with the start of a
-                significant project for the organisation which I was already contributing to. I led the team to deliver a new article display
-                platform for a public reveal in less than 8 months, hired new developers, taking responsibility for onboarding, led the team
-                in adopting more lean practices for day to day work, and continuing to lead with significant code contributions to the platform,
-                including a significant data ingestion and automation feature for it. Additionally, I work directly with the Head of Technology
-                and Innovation to plan and communicate the evolving platform and strategy.
-            </p>
-        </div>
-        <div class="row experience-section" data-appear-on-scroll="experience-section">
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Responsibilities</h5>
-                <ul>
-                    <li>Work with the Technology leadership to understand, shape and execute strategic plans for the Technology Department.</li>
-                    <li>Lead and inspire the Development Team - including developing our ways of working, training plans, career growth and challenging performance.</li>
-                    <li>Working with key stakeholders to plan, design and communicate new platform capabilities.</li>
-                    <li>Work with external partners to plan development of key shared technologies and data transfer standards and frameworks.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Key skills</h5>
-                <ul>
-                    <li>Excellent communication - to inspire others towards a vision, hear concerns within the team and stakeholders, and seek and communicate solutions to these problems.</li>
-                    <li>Excellent technical skills to lead-by-example, to communicate solutions with authority to the technical teams, and understand and represent the systems and technical challenges.</li>
-                    <li>Ability to understand and translate organisation strategy into team strategy and goals, to communicate them and encourage and setup ways of working to achieve those goals.</li>
-                    <li>Time and priority management to balance the needs of my team, the platform and the DevOps Engineer portion of my role, which continue in a part-time capacity.</li>
-                    <li>Ability to learn technologies quickly and adeptly, applying and adapting prior skills to the evolving technology landscape in science publishing.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Achievements</h5>
-                <ol>
-                    <li>Provide proof of concepts within weeks, evolve it as working software to publicly launch within 8 months, and continuing with significant improvements using continuous delivery principles and techniques.</li>
-                    <li>Transform a process-driven team culture into a (lean) principles-driven one - which owns, reflects and experiments with improvements to the process used to deliver software.</li>
-                    <li>Provide continuity at a key moment for the team, while still pushing for excellence and improvement.</li>
-                    <li>Coach the team on software development techniques and organising work to deliver results.</li>
-                    <li>Champion techniques such as pairing/mobbing, CD, and trunk-based development.</li>
-                </ol>
-            </div>
-        </div>
-        <div class="experience-section" data-appear-on-scroll="experience-section">
-            <h4><mark>Nov 2021 &dash; present</mark> DevOps Engineer - <small>eLife Sciences Publications Ltd</small></h4>
-            <p>
-                I chose to move organisation to allow more flexibility in my working arrangements, and took on a new technical role remotely for eLife Sciences
-                in the display technologies team. Here I was expected to take complete ownership of the existing EKS Kubernetes clusters, a mixture of proof of
-                concept and aging gitops-driven clusters that had only break-fix maintenance for a while. I was expected to learn the technologies involved, plan
-                and execute upgrades and migrations for clusters and their workloads, then create a plan for future capabilities based on the team’s future plans.
-            </p>
-        </div>
-        <div class="row experience-section" data-appear-on-scroll="experience-section">
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Responsibilities</h5>
-                <ul>
-                    <li>To learn and take ownership of the landscape of the EKS Kubernetes clusters and the tools and set up across a diverse range of workloads, from batch processing data ETL using Airflow, to home-grown web and API workloads.</li>
-                    <li>To provide support to my development team on a range of topics, primarily infrastructure and CI/CD, but increasingly on application development.</li>
-                    <li>To develop and execute a plan for the future of infrastructure, including the Kubernetes clusters, CI/CD infrastructure and developer tooling.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Key skills</h5>
-                <ul>
-                    <li>Ability to learn tools quickly, and to apply knowledge and strategic thinking to plan and organise migration projects.</li>
-                    <li>Ability to understand the goals of the team and wider organisation and shape a roadmap around those needs.</li>
-                    <li>Excellent communication to describe and explain the purpose of changes made, and to provide technical support to team members unaware of the problems and challenges.</li>
-                    <li>Teaching skills to share knowledge and grow a wider pool of individuals able to understand and diagnose the state of the infrastructure within the team.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Achievements</h5>
-                <ol>
-                    <li>Planned and executed modernising EKS Kubernetes clusters. Decommissioned a proof-of-concept cluster and all associated resources, migrating production workloads where necessary and upgraded remaining clusters from v1.18 to v1.21 (and all EKS releases since), upgrading cluster components as necessary, cleaning up any artefacts from prior partial upgrades, and doing so without any downtime. </li>
-                    <li>Automated future maintenance and upgrades using renovatebot, GitHub Actions, KinD and KWOK for testing package updates.</li>
-                    <li>
-                        Enabled new capabilities:
-                        <ul>
-                            <li>cluster-autoscaler to reduce ongoing monitoring, maintenance and reduce running costs.</li>
-                            <li>Introduce database operators for in-cluster provision of project resources and reduce dependence on separate provisioning.</li>
-                            <li>Loki in-cluster log collection to add useful context to relevant dashboards.</li>
-                            <li>Use of IAM roles for Service Accounts in AWS to provide better security for workloads.</li>
-                            <li>Introduced appropriate backup mechanisms to provide business continuity for the growing stateful workloads.</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-        </div>
-        <div class="experience-section" data-appear-on-scroll="experience-section">
-            <h4><mark>Sep 2018 &dash; Nov 2021</mark> Head of Technology - <small>Christians Against Poverty</small></h4>
-            <p>
-                Since September 2018 I have run the Technology department at Christians Against Poverty; managing
-                the &pound;1.3m budget, line managing 3 team leaders and a program staff, and representing the
-                Technology department at a senior management level. I have created and executed a change from
-                project to product management, restructuring the System Development team around long-lived product
-                teams, and fostering a greater collaboration between development teams and senior stakeholders. I
-                have also driven a greater emphasis on partnership, transparency and joint understanding of long
-                term risks and opportunities in the internally developed systems, resulting in joint-sponsorship of
-                Technology team investment by the charity's directors for other areas, winning multiple, multi-year
-                development team investments.
-            </p>
-        </div>
-        <div class="row experience-section" data-appear-on-scroll="experience-section">
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Responsibilities</h5>
-                <ul>
-                    <li>Managing a growing team (18 to 24) and budget (&pound;1.2m to &pound;1.4m).</li>
-                    <li>Ensuring the department is meeting regulatory requirements and new opportunities.</li>
-                    <li>Maintaining department wellbeing during a difficult period for the organisation (both before and during the pandemic)</li>
-                    <li>Positioning the Technology team to be sustainable by 2023.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Key skills</h5>
-                <ul>
-                    <li>Excellent communication at all levels, from senior stakeholders and organisation-wide announcements, to team level and one-to-one coaching.</li>
-                    <li>Ability to inspire others towards change, setting clear vision and executing that vision for the benefit of the organisation.</li>
-                    <li>Developing and challenging a team of other to improve and grow, while keeping an emphasis on team achievements.</li>
-                    <li>Being a vulnerable and empathetic leader that encourages others to be open and honest, and work together to achieve goals.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Achievements</h5>
-                <ol>
-                    <li>Secured &pound;100k investment for an internal trainee developer program.</li>
-                    <li>Successfully restructured internal development team away from projects towards product teams and flow-based work management.</li>
-                    <li>Grew an organisational understanding of risks and technical debt work, and advocated for a balanced approach to development.</li>
-                    <li>Focused on increasing transparency in prioritisation and workload within the department.</li>
-                    <li>All the above factors culminating in a voluntary transfer of budget from the biggest department to the technology department to aid charity objectives.</li>
-                    <li>Started and led a senior leadership group for support services that meets 6 weekly to share understanding and best practice.</li>
-                </ol>
-            </div>
-        </div>
-        <div class="experience-section" data-appear-on-scroll="experience-section"><hr></div>
-        <div class="experience-section" data-appear-on-scroll="experience-section">
-            <h4><mark>Dec 2016 &dash; Aug 2018</mark> Head of Systems Architecture - <small>Christians Against Poverty</small></h4>
-            <p>
-                Recognised as having greater influence outside of just systems development, I was offered a role as
-                Head of Systems Architecture, both providing guiding leadership for technical direction across all
-                the department and greater understanding of technical issues at a senior leadership level.
-            </p>
-        </div>
-        <div class="row experience-section"  data-appear-on-scroll="experience-section">
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Responsibilities</h5>
-                <ul>
-                    <li>Creating and communicating a technical vision for our internal and external systems across the department's multi-disciplinary teams.</li>
-                    <li>Driving up the quality of systems through training, change projects and internal advocacy.</li>
-                    <li>Providing the highest-level of technical input for projects across the organisation.</li>
-                    <li>Providing technical insight and understanding at the Senior leadership level.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Key skills</h5>
-                <ul>
-                    <li>Communication of deep technical issues in easy to understand terms to stakeholders and technical
-                        staff.</li>
-                    <li>Able to create a compelling technical vision and inspire others towards achieving it.</li>
-                    <li>Able to work in the detail, and at the big picture level to connect multiple projects and create cross-
-                        system solutions to problems.</li>
-                    <li>Contribute technical expertise to department planning and development.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Achievements</h5>
-                <ol>
-                    <li>Supported a growing development team that consistently sought increasing systems quality.</li>
-                    <li>Arranged and led training sessions across Systems Development and IT Operations teams.</li>
-                    <li>Provided technical insight into organisation-wide projects that helped to steer their successful
-                        implementation, including the biggest technical investment in the charity's history (Salesforce CRM).</li>
-                </ol>
-            </div>
-        </div>
-        <div class="experience-section" data-appear-on-scroll="experience-section"><hr></div>
-        <div class="experience-section"  data-appear-on-scroll="experience-section">
-            <h4><mark>Dec 2014 &dash; Dec 2016</mark> Systems Development Technical Lead - <small>Christians Against Poverty</small></h4>
-            <p>
-                As the Systems Development team began to grow, I was asked to provide leadership to the systems
-                developers to grow quality of programming, and direction and leadership on how to better grow,
-                maintain and integrate our internal and external systems.
-            </p>
-        </div>
-        <div class="row experience-section"  data-appear-on-scroll="experience-section">
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Responsibilities</h5>
-                <ul>
-                    <li>Supporting, training and onboarding new developers into the team</li>
-                    <li>Providing designs for new developments and technical escalation point for issues and bugs</li>
-                    <li>Supporting the IT Operations team in hosting and supporting our systems in production.</li>
-                    <li>Provide technical insight and understanding at the senior leadership level.</li>
-                    <li>Creating and communicating technical ways of working to the developers.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Key skills</h5>
-                <ul>
-                    <li>Being an excellent programmer, able to achieve results in a timely manner and to a high quality.</li>
-                    <li>Able to work with managers to understand gaps in needed skills and provide technical input,
-                        guidance and training.</li>
-                    <li>Provide technical input across a number of projects, and act as an escalation point for technical
-                        issues.</li>
-                    <li>Deep technical knowledge of PHP, MySQL and the 3rd party libraries in use, as well as tools such as
-                        BitBucket and Mercurial.</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <h5>Achievements</h5>
-                <ol>
-                    <li>Supported necessary changes in ways of working as the team grew from 3 developers to 6.</li>
-                    <li>Provided appropriate training for the development team, inspiring confidence in their abilities, and a
-                        desire to grow technically.</li>
-                    <li>Raised concerns about an externally developed system, and played a key part in an external
-                        technical review of that system.</li>
-                </ol>
-            </div>
-        </div>
-
-        <details>
-            <summary>More experience</summary>
-
-            <h4><mark>Sep 2008 &dash; Dec 2014</mark> Systems Developer - <small>Christians Against Poverty</small></h4>
-            <p>
-                While still working as a helpdesk support, I was asked to work on the internal PHP-based systems
-                after a development role was vacant for multiple months. After proving able to continue an
-                existing project and create new systems while still achieving in my Helpdesk role, I was offered
-                the role permanently. I was required to learn new skills, tools and ways of working to quickly
-                create and maintain the growing number of developed systems using PHP, MySQL and MongoDB, and
-                more than met the challenge, consistently achieving the praise of other developers for my
-                abilities.
-            </p>
-            <hr>
-            <h4><mark>Sep 2007 &dash;Aug 2008</mark> 2nd line Helpdesk support - <small>Christians Against Poverty</small></h4>
-            <p>
-                In late summer 2007, I started work in the I.T. department at Christians Against Poverty; a
-                Bradford-based rapidly expanding christian charity with a national centre network. I was given
-                the role of second line helpdesk support, providing in-person and on the phone support to the
-                head office staff, and the centre staff around the country. Responsibilities included desktop
-                support, network infrastructure and training, but I was soon involved with decisions about the
-                charity server and network infrastructure. Here I further enhanced my unix administration
-                skills, as well as helping the charity roll out it's Mac OS X-based server infrastructure for
-                roaming.
-            </p>
-            <hr>
-            <h4><mark>Dec 2005 &dash; Aug 2007</mark> Support Engineer - <small>Hi Tec Bradford</small></h4>
-            <p>
-                In 2005, I started work at Hi Tec Bradford, an Apple Authorised Service Provider and Solutions
-                Expert for Education. I was offered a role as an Apple Macintosh engineer and sales assistant
-                for the shop front. This required me to train on the Macintosh platform, and gave me invaluable
-                knowledge because I was able to use my skills on the P.C. platform and apply them to the
-                Macintosh, and due to the unix underpinnings of Mac OS X, I was able to develop my personal
-                knowledge of unix systems administration. This knowledge allowed me to have a greater complexity
-                to designing systems than other engineers that had dealt solely with Apple products. Due to my
-                experience in network systems, my role soon evolved to include Macintosh network systems
-                creation and on-site orientated tasks alongside my service responsibilities. I designed and
-                setup many Macintosh-based networks, including Mac only environments, integrating 50 new Macs
-                into an existing windows server environment for a school, and a school migration from Macintosh
-                Manager and AppleShare IP OS9 environment to 10.4 server with 10.3 and classic, and Intel 10.4
-                based clients. During my time with Hi-Tec, I studied and passed two Apple training exams and was
-                able to achieve the Apple Certified Helpdesk Technician and Apple Certified Technical
-                Coordinator certifications.
-            </p>
-            <hr>
-            <h4><mark>2002 &dash; Dec 2005</mark> Workshop Engineer - <small>Hi Tec Bradford</small></h4>
-            <p>
-                Following my work experience, I was offered a part-time job as a basic engineer. This involved
-                building new computer systems, basic assessments and repairs and virus and ad-ware removal and
-                repair.
-            </p>
-            <p>
-                After leaving school, I was offered a full-time role within the company as a workshop engineer,
-                with day release to college. As time progressed my duties within the company evolved to include
-                being an on- site engineer, a database designer and a website programmer. This entailed more
-                technical tasks such as network design, installation, repair and maintenance, network server
-                design, maintenance and troubleshooting, on-site assistance, new P.C. installations and advice
-                on new P.C's, dynamic website and Intranet/Internet management systems creation, as well as
-                generic roles including stock management, customer relations, technical support and shop sales.
-            </p>
-        </details>
-    </section>
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-section" data-appear-on-scroll="education-section">
-            <details>
-                <summary><mark>2003 - 2004</mark> HNC Software Engineering (incomplete) - <small>Bradford College, Bradford</small></summary>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div
+                class="experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <h4>
+                    <mark>May 2022 &dash; present</mark> Tech Lead Manager -
+                    <small>eLife Sciences Publications Ltd</small>
+                </h4>
                 <p>
-                    After upper school, I applied to join a HNC course in software engineering at Bradford College. I
-                    gained a place at 16 years old, 1 year younger than the minimum age they would normally allow. I
-                    attained 3 distinction grades for all 3 units during the first year. Unfortunately, due to personal
-                    circumstances I decided to delay the second year, and I was unable to re-attend a year later because
-                    the course syllabus had changed.
+                    Since May 2022, I took responsibility for leading the
+                    display technologies team at eLife. This coincided with the
+                    start of a significant project for the organisation which I
+                    was already contributing to. I led the team to deliver a new
+                    article display platform for a public reveal in less than 8
+                    months, hired new developers, taking responsibility for
+                    onboarding, led the team in adopting more lean practices for
+                    day to day work, and continuing to lead with significant
+                    code contributions to the platform, including a significant
+                    data ingestion and automation feature for it. Additionally,
+                    I work directly with the Head of Technology and Innovation
+                    to plan and communicate the evolving platform and strategy.
+                </p>
+            </div>
+            <div
+                class="row experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Responsibilities</h5>
+                    <ul>
+                        <li>
+                            Work with the Technology leadership to understand,
+                            shape and execute strategic plans for the Technology
+                            Department.
+                        </li>
+                        <li>
+                            Lead and inspire the Development Team - including
+                            developing our ways of working, training plans,
+                            career growth and challenging performance.
+                        </li>
+                        <li>
+                            Working with key stakeholders to plan, design and
+                            communicate new platform capabilities.
+                        </li>
+                        <li>
+                            Work with external partners to plan development of
+                            key shared technologies and data transfer standards
+                            and frameworks.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Key skills</h5>
+                    <ul>
+                        <li>
+                            Excellent communication - to inspire others towards
+                            a vision, hear concerns within the team and
+                            stakeholders, and seek and communicate solutions to
+                            these problems.
+                        </li>
+                        <li>
+                            Excellent technical skills to lead-by-example, to
+                            communicate solutions with authority to the
+                            technical teams, and understand and represent the
+                            systems and technical challenges.
+                        </li>
+                        <li>
+                            Ability to understand and translate organisation
+                            strategy into team strategy and goals, to
+                            communicate them and encourage and setup ways of
+                            working to achieve those goals.
+                        </li>
+                        <li>
+                            Time and priority management to balance the needs of
+                            my team, the platform and the DevOps Engineer
+                            portion of my role, which continue in a part-time
+                            capacity.
+                        </li>
+                        <li>
+                            Ability to learn technologies quickly and adeptly,
+                            applying and adapting prior skills to the evolving
+                            technology landscape in science publishing.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Achievements</h5>
+                    <ol>
+                        <li>
+                            Provide proof of concepts within weeks, evolve it as
+                            working software to publicly launch within 8 months,
+                            and continuing with significant improvements using
+                            continuous delivery principles and techniques.
+                        </li>
+                        <li>
+                            Transform a process-driven team culture into a
+                            (lean) principles-driven one - which owns, reflects
+                            and experiments with improvements to the process
+                            used to deliver software.
+                        </li>
+                        <li>
+                            Provide continuity at a key moment for the team,
+                            while still pushing for excellence and improvement.
+                        </li>
+                        <li>
+                            Coach the team on software development techniques
+                            and organising work to deliver results.
+                        </li>
+                        <li>
+                            Champion techniques such as pairing/mobbing, CD, and
+                            trunk-based development.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div
+                class="experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <h4>
+                    <mark>Nov 2021 &dash; present</mark> DevOps Engineer -
+                    <small>eLife Sciences Publications Ltd</small>
+                </h4>
+                <p>
+                    I chose to move organisation to allow more flexibility in my
+                    working arrangements, and took on a new technical role
+                    remotely for eLife Sciences in the display technologies
+                    team. Here I was expected to take complete ownership of the
+                    existing EKS Kubernetes clusters, a mixture of proof of
+                    concept and aging gitops-driven clusters that had only
+                    break-fix maintenance for a while. I was expected to learn
+                    the technologies involved, plan and execute upgrades and
+                    migrations for clusters and their workloads, then create a
+                    plan for future capabilities based on the team’s future
+                    plans.
+                </p>
+            </div>
+            <div
+                class="row experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Responsibilities</h5>
+                    <ul>
+                        <li>
+                            To learn and take ownership of the landscape of the
+                            EKS Kubernetes clusters and the tools and set up
+                            across a diverse range of workloads, from batch
+                            processing data ETL using Airflow, to home-grown web
+                            and API workloads.
+                        </li>
+                        <li>
+                            To provide support to my development team on a range
+                            of topics, primarily infrastructure and CI/CD, but
+                            increasingly on application development.
+                        </li>
+                        <li>
+                            To develop and execute a plan for the future of
+                            infrastructure, including the Kubernetes clusters,
+                            CI/CD infrastructure and developer tooling.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Key skills</h5>
+                    <ul>
+                        <li>
+                            Ability to learn tools quickly, and to apply
+                            knowledge and strategic thinking to plan and
+                            organise migration projects.
+                        </li>
+                        <li>
+                            Ability to understand the goals of the team and
+                            wider organisation and shape a roadmap around those
+                            needs.
+                        </li>
+                        <li>
+                            Excellent communication to describe and explain the
+                            purpose of changes made, and to provide technical
+                            support to team members unaware of the problems and
+                            challenges.
+                        </li>
+                        <li>
+                            Teaching skills to share knowledge and grow a wider
+                            pool of individuals able to understand and diagnose
+                            the state of the infrastructure within the team.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Achievements</h5>
+                    <ol>
+                        <li>
+                            Planned and executed modernising EKS Kubernetes
+                            clusters. Decommissioned a proof-of-concept cluster
+                            and all associated resources, migrating production
+                            workloads where necessary and upgraded remaining
+                            clusters from v1.18 to v1.21 (and all EKS releases
+                            since), upgrading cluster components as necessary,
+                            cleaning up any artefacts from prior partial
+                            upgrades, and doing so without any downtime.
+                        </li>
+                        <li>
+                            Automated future maintenance and upgrades using
+                            renovatebot, GitHub Actions, KinD and KWOK for
+                            testing package updates.
+                        </li>
+                        <li>
+                            Enabled new capabilities:
+                            <ul>
+                                <li>
+                                    cluster-autoscaler to reduce ongoing
+                                    monitoring, maintenance and reduce running
+                                    costs.
+                                </li>
+                                <li>
+                                    Introduce database operators for in-cluster
+                                    provision of project resources and reduce
+                                    dependence on separate provisioning.
+                                </li>
+                                <li>
+                                    Loki in-cluster log collection to add useful
+                                    context to relevant dashboards.
+                                </li>
+                                <li>
+                                    Use of IAM roles for Service Accounts in AWS
+                                    to provide better security for workloads.
+                                </li>
+                                <li>
+                                    Introduced appropriate backup mechanisms to
+                                    provide business continuity for the growing
+                                    stateful workloads.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div
+                class="experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <h4>
+                    <mark>Sep 2018 &dash; Nov 2021</mark> Head of Technology -
+                    <small>Christians Against Poverty</small>
+                </h4>
+                <p>
+                    Since September 2018 I have run the Technology department at
+                    Christians Against Poverty; managing the &pound;1.3m budget,
+                    line managing 3 team leaders and a program staff, and
+                    representing the Technology department at a senior
+                    management level. I have created and executed a change from
+                    project to product management, restructuring the System
+                    Development team around long-lived product teams, and
+                    fostering a greater collaboration between development teams
+                    and senior stakeholders. I have also driven a greater
+                    emphasis on partnership, transparency and joint
+                    understanding of long term risks and opportunities in the
+                    internally developed systems, resulting in joint-sponsorship
+                    of Technology team investment by the charity's directors for
+                    other areas, winning multiple, multi-year development team
+                    investments.
+                </p>
+            </div>
+            <div
+                class="row experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Responsibilities</h5>
+                    <ul>
+                        <li>
+                            Managing a growing team (18 to 24) and budget
+                            (&pound;1.2m to &pound;1.4m).
+                        </li>
+                        <li>
+                            Ensuring the department is meeting regulatory
+                            requirements and new opportunities.
+                        </li>
+                        <li>
+                            Maintaining department wellbeing during a difficult
+                            period for the organisation (both before and during
+                            the pandemic)
+                        </li>
+                        <li>
+                            Positioning the Technology team to be sustainable by
+                            2023.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Key skills</h5>
+                    <ul>
+                        <li>
+                            Excellent communication at all levels, from senior
+                            stakeholders and organisation-wide announcements, to
+                            team level and one-to-one coaching.
+                        </li>
+                        <li>
+                            Ability to inspire others towards change, setting
+                            clear vision and executing that vision for the
+                            benefit of the organisation.
+                        </li>
+                        <li>
+                            Developing and challenging a team of other to
+                            improve and grow, while keeping an emphasis on team
+                            achievements.
+                        </li>
+                        <li>
+                            Being a vulnerable and empathetic leader that
+                            encourages others to be open and honest, and work
+                            together to achieve goals.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Achievements</h5>
+                    <ol>
+                        <li>
+                            Secured &pound;100k investment for an internal
+                            trainee developer program.
+                        </li>
+                        <li>
+                            Successfully restructured internal development team
+                            away from projects towards product teams and
+                            flow-based work management.
+                        </li>
+                        <li>
+                            Grew an organisational understanding of risks and
+                            technical debt work, and advocated for a balanced
+                            approach to development.
+                        </li>
+                        <li>
+                            Focused on increasing transparency in prioritisation
+                            and workload within the department.
+                        </li>
+                        <li>
+                            All the above factors culminating in a voluntary
+                            transfer of budget from the biggest department to
+                            the technology department to aid charity objectives.
+                        </li>
+                        <li>
+                            Started and led a senior leadership group for
+                            support services that meets 6 weekly to share
+                            understanding and best practice.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div
+                class="experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <hr />
+            </div>
+            <div
+                class="experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <h4>
+                    <mark>Dec 2016 &dash; Aug 2018</mark> Head of Systems
+                    Architecture - <small>Christians Against Poverty</small>
+                </h4>
+                <p>
+                    Recognised as having greater influence outside of just
+                    systems development, I was offered a role as Head of Systems
+                    Architecture, both providing guiding leadership for
+                    technical direction across all the department and greater
+                    understanding of technical issues at a senior leadership
+                    level.
+                </p>
+            </div>
+            <div
+                class="row experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Responsibilities</h5>
+                    <ul>
+                        <li>
+                            Creating and communicating a technical vision for
+                            our internal and external systems across the
+                            department's multi-disciplinary teams.
+                        </li>
+                        <li>
+                            Driving up the quality of systems through training,
+                            change projects and internal advocacy.
+                        </li>
+                        <li>
+                            Providing the highest-level of technical input for
+                            projects across the organisation.
+                        </li>
+                        <li>
+                            Providing technical insight and understanding at the
+                            Senior leadership level.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Key skills</h5>
+                    <ul>
+                        <li>
+                            Communication of deep technical issues in easy to
+                            understand terms to stakeholders and technical
+                            staff.
+                        </li>
+                        <li>
+                            Able to create a compelling technical vision and
+                            inspire others towards achieving it.
+                        </li>
+                        <li>
+                            Able to work in the detail, and at the big picture
+                            level to connect multiple projects and create cross-
+                            system solutions to problems.
+                        </li>
+                        <li>
+                            Contribute technical expertise to department
+                            planning and development.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Achievements</h5>
+                    <ol>
+                        <li>
+                            Supported a growing development team that
+                            consistently sought increasing systems quality.
+                        </li>
+                        <li>
+                            Arranged and led training sessions across Systems
+                            Development and IT Operations teams.
+                        </li>
+                        <li>
+                            Provided technical insight into organisation-wide
+                            projects that helped to steer their successful
+                            implementation, including the biggest technical
+                            investment in the charity's history (Salesforce
+                            CRM).
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div
+                class="experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <hr />
+            </div>
+            <div
+                class="experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <h4>
+                    <mark>Dec 2014 &dash; Dec 2016</mark> Systems Development
+                    Technical Lead - <small>Christians Against Poverty</small>
+                </h4>
+                <p>
+                    As the Systems Development team began to grow, I was asked
+                    to provide leadership to the systems developers to grow
+                    quality of programming, and direction and leadership on how
+                    to better grow, maintain and integrate our internal and
+                    external systems.
+                </p>
+            </div>
+            <div
+                class="row experience-section"
+                data-appear-on-scroll="experience-section"
+            >
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Responsibilities</h5>
+                    <ul>
+                        <li>
+                            Supporting, training and onboarding new developers
+                            into the team
+                        </li>
+                        <li>
+                            Providing designs for new developments and technical
+                            escalation point for issues and bugs
+                        </li>
+                        <li>
+                            Supporting the IT Operations team in hosting and
+                            supporting our systems in production.
+                        </li>
+                        <li>
+                            Provide technical insight and understanding at the
+                            senior leadership level.
+                        </li>
+                        <li>
+                            Creating and communicating technical ways of working
+                            to the developers.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Key skills</h5>
+                    <ul>
+                        <li>
+                            Being an excellent programmer, able to achieve
+                            results in a timely manner and to a high quality.
+                        </li>
+                        <li>
+                            Able to work with managers to understand gaps in
+                            needed skills and provide technical input, guidance
+                            and training.
+                        </li>
+                        <li>
+                            Provide technical input across a number of projects,
+                            and act as an escalation point for technical issues.
+                        </li>
+                        <li>
+                            Deep technical knowledge of PHP, MySQL and the 3rd
+                            party libraries in use, as well as tools such as
+                            BitBucket and Mercurial.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <h5>Achievements</h5>
+                    <ol>
+                        <li>
+                            Supported necessary changes in ways of working as
+                            the team grew from 3 developers to 6.
+                        </li>
+                        <li>
+                            Provided appropriate training for the development
+                            team, inspiring confidence in their abilities, and a
+                            desire to grow technically.
+                        </li>
+                        <li>
+                            Raised concerns about an externally developed
+                            system, and played a key part in an external
+                            technical review of that system.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <details>
+                <summary>More experience</summary>
+
+                <h4>
+                    <mark>Sep 2008 &dash; Dec 2014</mark> Systems Developer -
+                    <small>Christians Against Poverty</small>
+                </h4>
+                <p>
+                    While still working as a helpdesk support, I was asked to
+                    work on the internal PHP-based systems after a development
+                    role was vacant for multiple months. After proving able to
+                    continue an existing project and create new systems while
+                    still achieving in my Helpdesk role, I was offered the role
+                    permanently. I was required to learn new skills, tools and
+                    ways of working to quickly create and maintain the growing
+                    number of developed systems using PHP, MySQL and MongoDB,
+                    and more than met the challenge, consistently achieving the
+                    praise of other developers for my abilities.
+                </p>
+                <hr />
+                <h4>
+                    <mark>Sep 2007 &dash;Aug 2008</mark> 2nd line Helpdesk
+                    support - <small>Christians Against Poverty</small>
+                </h4>
+                <p>
+                    In late summer 2007, I started work in the I.T. department
+                    at Christians Against Poverty; a Bradford-based rapidly
+                    expanding christian charity with a national centre network.
+                    I was given the role of second line helpdesk support,
+                    providing in-person and on the phone support to the head
+                    office staff, and the centre staff around the country.
+                    Responsibilities included desktop support, network
+                    infrastructure and training, but I was soon involved with
+                    decisions about the charity server and network
+                    infrastructure. Here I further enhanced my unix
+                    administration skills, as well as helping the charity roll
+                    out it's Mac OS X-based server infrastructure for roaming.
+                </p>
+                <hr />
+                <h4>
+                    <mark>Dec 2005 &dash; Aug 2007</mark> Support Engineer -
+                    <small>Hi Tec Bradford</small>
+                </h4>
+                <p>
+                    In 2005, I started work at Hi Tec Bradford, an Apple
+                    Authorised Service Provider and Solutions Expert for
+                    Education. I was offered a role as an Apple Macintosh
+                    engineer and sales assistant for the shop front. This
+                    required me to train on the Macintosh platform, and gave me
+                    invaluable knowledge because I was able to use my skills on
+                    the P.C. platform and apply them to the Macintosh, and due
+                    to the unix underpinnings of Mac OS X, I was able to develop
+                    my personal knowledge of unix systems administration. This
+                    knowledge allowed me to have a greater complexity to
+                    designing systems than other engineers that had dealt solely
+                    with Apple products. Due to my experience in network
+                    systems, my role soon evolved to include Macintosh network
+                    systems creation and on-site orientated tasks alongside my
+                    service responsibilities. I designed and setup many
+                    Macintosh-based networks, including Mac only environments,
+                    integrating 50 new Macs into an existing windows server
+                    environment for a school, and a school migration from
+                    Macintosh Manager and AppleShare IP OS9 environment to 10.4
+                    server with 10.3 and classic, and Intel 10.4 based clients.
+                    During my time with Hi-Tec, I studied and passed two Apple
+                    training exams and was able to achieve the Apple Certified
+                    Helpdesk Technician and Apple Certified Technical
+                    Coordinator certifications.
+                </p>
+                <hr />
+                <h4>
+                    <mark>2002 &dash; Dec 2005</mark> Workshop Engineer -
+                    <small>Hi Tec Bradford</small>
+                </h4>
+                <p>
+                    Following my work experience, I was offered a part-time job
+                    as a basic engineer. This involved building new computer
+                    systems, basic assessments and repairs and virus and ad-ware
+                    removal and repair.
+                </p>
+                <p>
+                    After leaving school, I was offered a full-time role within
+                    the company as a workshop engineer, with day release to
+                    college. As time progressed my duties within the company
+                    evolved to include being an on- site engineer, a database
+                    designer and a website programmer. This entailed more
+                    technical tasks such as network design, installation, repair
+                    and maintenance, network server design, maintenance and
+                    troubleshooting, on-site assistance, new P.C. installations
+                    and advice on new P.C's, dynamic website and
+                    Intranet/Internet management systems creation, as well as
+                    generic roles including stock management, customer
+                    relations, technical support and shop sales.
                 </p>
             </details>
-        </div>
-        <div class="education-section" data-appear-on-scroll="education-section">
-            <details>
-                <summary><mark>2003</mark> GCSEs - <small>Salt Grammar school</small></summary>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <div
+                class="education-section"
+                data-appear-on-scroll="education-section"
+            >
+                <details>
+                    <summary>
+                        <mark>2003 - 2004</mark> HNC Software Engineering
+                        (incomplete) - <small>Bradford College, Bradford</small>
+                    </summary>
+                    <p>
+                        After upper school, I applied to join a HNC course in
+                        software engineering at Bradford College. I gained a
+                        place at 16 years old, 1 year younger than the minimum
+                        age they would normally allow. I attained 3 distinction
+                        grades for all 3 units during the first year.
+                        Unfortunately, due to personal circumstances I decided
+                        to delay the second year, and I was unable to re-attend
+                        a year later because the course syllabus had changed.
+                    </p>
+                </details>
+            </div>
+            <div
+                class="education-section"
+                data-appear-on-scroll="education-section"
+            >
+                <details>
+                    <summary>
+                        <mark>2003</mark> GCSEs -
+                        <small>Salt Grammar school</small>
+                    </summary>
                     <table>
                         <thead>
                             <tr>
@@ -699,97 +1235,133 @@
                         </tr>
                         <tr>
                             <td>B</td>
-                            <td>Biology, English (literature), German, History, Physics, Religious Education</td>
+                            <td>
+                                Biology, English (literature), German, History,
+                                Physics, Religious Education
+                            </td>
                         </tr>
                         <tr>
                             <td>C</td>
                             <td>English (language)</td>
                         </tr>
                     </table>
+                    <p>
+                        I also achieved a pass grade for a GNVQ in Information
+                        and Communication Technology, equivalent to four
+                        G.C.S.E.'s
+                    </p>
+                </details>
+            </div>
+        </section>
+        <section id="hobbies">
+            <h2>Hobbies and other interests</h2>
+            <div class="hobby-section" data-appear-on-scroll="hobby-section">
                 <p>
-                    I also achieved a pass grade for a GNVQ in Information and Communication Technology, equivalent to four G.C.S.E.'s
+                    Aside from my interest in all things technical, I also play
+                    guitar and drums. I have been involved with bands in the
+                    past, and enjoy being a member of the worship leading team
+                    at my church. I also play as part of the ensemble worship
+                    team, and have played both guitar and drums regularly for
+                    Church services and events.
                 </p>
-            </details>
-        </div>
-    </section>
-    <section id="hobbies">
-        <h2>Hobbies and other interests</h2>
-        <div class="hobby-section"  data-appear-on-scroll="hobby-section">
-            <p>
-                Aside from my interest in all things technical, I also play guitar and drums. I have been involved
-                with bands in the past, and enjoy being a member of the worship leading team at my church. I also
-                play as part of the ensemble worship team, and have played both guitar and drums regularly for
-                Church services and events.
-            </p>
-            <p>
-                My children are home educated, primarily by my wife, and we all enjoy learning together as a family.
-                I help teach my son about computers and programming, and support him through his G.C.S.E. in
-                computer science. I also enjoyed pitching in with all their subjects and interests, and especially
-                trying to grow an appreciation of the history around us.
-            </p>
-            <p>
-                I've also more recently grown an interest in photography, video editing and post-production, particularly as the
-                need grew to create online services and videos for our church during the COVID-19 pandemic. I
-                particularly enjoy the combination of technical abilities, combined with the creative need to create
-                a visually compelling package.
-            </p>
-            <p>
-                I passed my driving test in April 2005, and have enjoyed the freedom of easy traveling since that
-                time.
-            </p>
-        </div>
-    </section>
-    <footer id="contact">
-        <ul class="contact-section" data-appear-on-scroll="contact-section">
-            <li>email - <a href="mailto:scott@aubrey.org.uk">scott@aubrey.org.uk</a></li>
-            <li>website - <a href="https://www.aubrey.org.uk">aubrey.org.uk</a></li>
-            <li>twitter - <a href="twitter.com/scottaubrey">twitter.com/scottaubrey</a></li>
-            <li>github - <a href="https://github.com/scottaubrey">github.com/scottaubrey</a></li>
-        </ul>
-    </footer>
+                <p>
+                    My children are home educated, primarily by my wife, and we
+                    all enjoy learning together as a family. I help teach my son
+                    about computers and programming, and support him through his
+                    G.C.S.E. in computer science. I also enjoyed pitching in
+                    with all their subjects and interests, and especially trying
+                    to grow an appreciation of the history around us.
+                </p>
+                <p>
+                    I've also more recently grown an interest in photography,
+                    video editing and post-production, particularly as the need
+                    grew to create online services and videos for our church
+                    during the COVID-19 pandemic. I particularly enjoy the
+                    combination of technical abilities, combined with the
+                    creative need to create a visually compelling package.
+                </p>
+                <p>
+                    I passed my driving test in April 2005, and have enjoyed the
+                    freedom of easy traveling since that time.
+                </p>
+            </div>
+        </section>
+        <footer id="contact">
+            <ul class="contact-section" data-appear-on-scroll="contact-section">
+                <li>
+                    email -
+                    <a href="mailto:scott@aubrey.org.uk">scott@aubrey.org.uk</a>
+                </li>
+                <li>
+                    website -
+                    <a href="https://www.aubrey.org.uk">aubrey.org.uk</a>
+                </li>
+                <li>
+                    twitter -
+                    <a href="twitter.com/scottaubrey"
+                        >twitter.com/scottaubrey</a
+                    >
+                </li>
+                <li>
+                    github -
+                    <a href="https://github.com/scottaubrey"
+                        >github.com/scottaubrey</a
+                    >
+                </li>
+            </ul>
+        </footer>
 
-    <script>
-        //retrieved and edited from https://www.dev-tips-and-tricks.com/animate-elements-scrolled-view-vanilla-js
-        (function() {
-        var appearOnScrollElements;
-        var windowHeight;
+        <script>
+            //retrieved and edited from https://www.dev-tips-and-tricks.com/animate-elements-scrolled-view-vanilla-js
+            (function () {
+                var appearOnScrollElements;
+                var windowHeight;
 
-        function init() {
-            appearOnScrollElements = document.querySelectorAll('*[data-appear-on-scroll]');
-            for (var i = 0; i < appearOnScrollElements.length; i++) {
-                var element = appearOnScrollElements[i];
+                function init() {
+                    appearOnScrollElements = document.querySelectorAll(
+                        "*[data-appear-on-scroll]",
+                    );
+                    for (var i = 0; i < appearOnScrollElements.length; i++) {
+                        var element = appearOnScrollElements[i];
 
-                //remove the animation class
-                var appearOnScrollClass = element.getAttribute('data-appear-on-scroll');
-                element.classList.remove(appearOnScrollClass);
+                        //remove the animation class
+                        var appearOnScrollClass = element.getAttribute(
+                            "data-appear-on-scroll",
+                        );
+                        element.classList.remove(appearOnScrollClass);
 
-                //add the hidden class
-                appearOnScrollElements[i].classList.add('appear-on-scroll-hidden');
-            }
-            windowHeight = window.innerHeight;
-        }
-
-        function checkPosition() {
-            for (var i = 0; i < appearOnScrollElements.length; i++) {
-                var element = appearOnScrollElements[i];
-                var positionFromTop = appearOnScrollElements[i].getBoundingClientRect().top;
-
-                if (positionFromTop - windowHeight <= 0) {
-                    var appearOnScrollClass = element.getAttribute('data-appear-on-scroll');
-
-                    element.classList.add(appearOnScrollClass);
-                    element.classList.remove('appear-on-scroll-hidden');
+                        //add the hidden class
+                        appearOnScrollElements[i].classList.add(
+                            "appear-on-scroll-hidden",
+                        );
+                    }
+                    windowHeight = window.innerHeight;
                 }
-            }
-        }
 
-        window.addEventListener('scroll', checkPosition);
-        window.addEventListener('resize', init);
+                function checkPosition() {
+                    for (var i = 0; i < appearOnScrollElements.length; i++) {
+                        var element = appearOnScrollElements[i];
+                        var positionFromTop =
+                            appearOnScrollElements[i].getBoundingClientRect()
+                                .top;
 
-        init();
-        checkPosition();
-        })();
+                        if (positionFromTop - windowHeight <= 0) {
+                            var appearOnScrollClass = element.getAttribute(
+                                "data-appear-on-scroll",
+                            );
 
-</script>
-</body>
+                            element.classList.add(appearOnScrollClass);
+                            element.classList.remove("appear-on-scroll-hidden");
+                        }
+                    }
+                }
+
+                window.addEventListener("scroll", checkPosition);
+                window.addEventListener("resize", init);
+
+                init();
+                checkPosition();
+            })();
+        </script>
+    </body>
 </html>
